@@ -245,13 +245,7 @@ if prompt := st.chat_input("Message SLM Mobile AI..."):
     6. **Closing**: End with a helpful follow-up question.
     """
 
-    # Debugging helper
-    with st.expander("Debug Info"):
-        st.text(f"Model: {MODEL_NAME}")
-        if context_data:
-            st.code(context_data)
-        else:
-            st.write("No matching rows found.")
+
 
     # 3. Call Model (Non-Streaming for instant-feel feel if fast, or just wait if slow)
     with st.spinner(f"Checking stock..."):
