@@ -20,6 +20,8 @@ if not api_key:
 
 client = OpenAI(api_key=api_key)
 
+st.set_page_config(page_title="SLM Mobile AI", layout="wide", page_icon="📱")
+
 # Custom Premium Styling (Light/Grey Theme for visibility)
 st.markdown("""
     <style>
@@ -158,8 +160,6 @@ def search_data(df, query):
         return ""
         
     return relevant_rows.to_markdown(index=False)
-
-st.set_page_config(page_title="SLM Mobile AI", layout="wide", page_icon="📱")
 
 # Dashboard Logic
 df = load_data()
