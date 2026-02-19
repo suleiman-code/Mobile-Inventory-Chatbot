@@ -22,8 +22,6 @@ ID,Name,Brand,RAM,Storage,Battery,Camera,Display,Processor,Price PKR,Stock,Featu
 21,Xiaomi 14 Ultra,Xiaomi,16GB,512GB,5300mAh,50+50MP Leica,"6.73"" AMOLED",Snapdragon 8 Gen3,225000,8,"Leica optics, 90W charging"
 22,Xiaomi 14,Xiaomi,12GB,256GB,4610mAh,50+50MP,"6.36"" AMOLED",Snapdragon 8 Gen3,165000,18,"HyperOS, compact flagship"
 23,Xiaomi 14T Pro,Xiaomi,12GB,256GB,5000mAh,50+50MP Leica,"6.67"" AMOLED",Dimensity 9300+,145000,22,120W charging
-24,Redmi Note 13 Pro,Redmi,8GB,256GB,5100mAh,200MP,"6.67"" AMOLED",Snapdragon 7s Gen2,65000,48,120Hz 1.5K display
-25,Redmi Note 12,Redmi,6GB,128GB,5000mAh,108MP,"6.67"" AMOLED",Snapdragon 685,45000,65,Budget king
 26,Vivo X100 Pro,Vivo,16GB,512GB,5400mAh,50+50MP Zeiss,"6.78"" AMOLED",Dimensity 9300,195000,12,"Zeiss optics, V2 chip"
 27,Vivo V30 Pro,Vivo,12GB,256GB,5000mAh,50+50MP,"6.78"" AMOLED",Snapdragon 7 Gen3,105000,26,"Aura Light, slim design"
 28,Vivo V30,Vivo,8GB,256GB,5000mAh,50+50MP,"6.78"" AMOLED",Snapdragon 7 Gen3,85000,32,Zeiss T* lens
@@ -46,11 +44,10 @@ ID,Name,Brand,RAM,Storage,Battery,Camera,Display,Processor,Price PKR,Stock,Featu
 45,Pixel 9a,Google,8GB,128GB,4650mAh,64+13MP,"6.1"" OLED",Tensor G4,115000,30,"Google AI, Android 15"
 46,OnePlus 13,OnePlus,12GB,256GB,6000mAh,50+50+50MP,"6.82"" AMOLED",Snapdragon 8 Elite,195000,10,"100W, Hassleblad"
 47,Xiaomi 15 Pro,Xiaomi,12GB,256GB,6100mAh,50+50+50MP,"6.73"" AMOLED",Snapdragon 8 Elite,235000,8,"C8 Display, Leica"
-48,Redmi Note 14 Pro+,Redmi,12GB,512GB,6200mAh,50+50+12MP,"6.67"" AMOLED",Snapdragon 7s Gen3,85000,45,"King Kong design, 90W"
 49,Vivo X200 Pro,Vivo,16GB,512GB,6000mAh,50+200+50MP,"6.78"" AMOLED",Dimensity 9400,215000,10,"Zeiss optics, BlueVolt"
 50,Oppo Find X8 Pro,Oppo,12GB,256GB,5910mAh,50+50+50+50MP,"6.78"" AMOLED",Dimensity 9400,205000,12,"Hasselblad, Dual Periscope"
 51,Realme GT 7 Pro,Realme,12GB,256GB,6500mAh,50+50+8MP,"6.78"" AMOLED",Snapdragon 8 Elite,155000,15,"120W, Eco2 Sky Screen"
-52,iPhone 14,Apple,6GB,128GB,3279mAh,12+12MP,"6.1"" Retina",A15 Bionic,145000,20,"Crash Detection"
+52,iPhone 14,Apple,6GB,128GB,3279mAh,12+12MP,"6.1"" Retina",A15 Bionic,145000,20,Crash Detection
 53,Galaxy A15,Samsung,6GB,128GB,5000mAh,50+5MP,"6.5"" AMOLED",Helio G99,42000,60,"Budget, Super AMOLED"
 54,iPhone 13,Apple,4GB,128GB,3240mAh,12+12MP,"6.1"" Retina",A15 Bionic,125000,25,Classic flagship
 55,iPhone 12,Apple,4GB,128GB,2815mAh,12+12MP,"6.1"" Retina",A14 Bionic,95000,15,Still capable
@@ -71,9 +68,6 @@ ID,Name,Brand,RAM,Storage,Battery,Camera,Display,Processor,Price PKR,Stock,Featu
 70,OnePlus Nord CE 3 Lite,OnePlus,8GB,128GB,5000mAh,108MP,"6.72"" LCD",Snapdragon 695,45000,50,Fast charging budget
 71,Xiaomi 13 Ultra,Xiaomi,12GB,256GB,5000mAh,50+50+50+50MP Leica,"6.73"" LTPO AMOLED",Snapdragon 8 Gen 2,165000,8,Leica master
 72,Xiaomi 13,Xiaomi,8GB,256GB,4500mAh,50+10+12MP Leica,"6.36"" AMOLED",Snapdragon 8 Gen 2,125000,15,Compact Leica
-73,Redmi Note 13 Pro+,Redmi,12GB,512GB,5000mAh,200MP,"6.67"" AMOLED",Dimensity 7200 Ultra,85000,40,Curved display
-74,Redmi Note 13,Redmi,8GB,128GB,5000mAh,108MP,"6.67"" AMOLED",Snapdragon 685,48000,60,Value king
-75,Redmi 13C,Redmi,6GB,128GB,5000mAh,50MP,"6.74"" LCD",Helio G85,28000,100,Super budget
 76,Vivo X90 Pro,Vivo,12GB,256GB,4870mAh,50+50+12MP Zeiss,"6.78"" AMOLED",Dimensity 9200,135000,10,Zeiss imaging
 77,Vivo V29 Pro,Vivo,12GB,256GB,4600mAh,50+12+8MP,"6.78"" AMOLED",Dimensity 8200,95000,20,Portrait expert
 78,Vivo V29,Vivo,8GB,128GB,4600mAh,50MP,"6.78"" AMOLED",Snapdragon 778G,75000,30,Slim & stylish
@@ -99,3 +93,109 @@ ID,Name,Brand,RAM,Storage,Battery,Camera,Display,Processor,Price PKR,Stock,Featu
 98,Oppo F21 Pro,Oppo,8GB,128GB,4500mAh,64MP,"6.43"" AMOLED",Snapdragon 680,48000,35,Fiberglass leather
 99,Realme 10 Pro,Realme,8GB,128GB,5000mAh,108MP,"6.72"" LCD",Snapdragon 695,42000,40,Bezel-less display
 100,iPhone SE 2022,Apple,4GB,64GB,2018mAh,12MP,"4.7"" Retina",A15 Bionic,55000,50,Compact classic
+118,Camon 30 Premier 2025,Tecno,6GB,128GB,4786mAh,197MP,6.8 AMOLED,Exynos 1380,221105,43,Fast Charging
+121,Pova 6 2024,Tecno,12GB,256GB,5461mAh,126MP,6.8 AMOLED,Snapdragon 8 Gen 3,155324,96,Water Resistant
+129,Pop 8 2023,Tecno,12GB,64GB,4993mAh,33MP,6.8 AMOLED,Helio G99,100500,72,Fast Charging
+140,Pop 8 2025,Tecno,6GB,512GB,5264mAh,147MP,6.4 AMOLED,Snapdragon 7 Gen 3,62935,50,Fast Charging
+145,GT 10 Pro 2023,Infinix,6GB,128GB,4564mAh,158MP,6.7 AMOLED,Snapdragon 7 Gen 3,78978,23,AI Camera
+148,Phantom V Fold 2024,Tecno,8GB,128GB,5813mAh,169MP,6.7 AMOLED,Snapdragon 8 Gen 3,164010,42,Gaming focus
+149,Note 40 Pro 2023,Infinix,8GB,128GB,4177mAh,129MP,6.4 AMOLED,Exynos 1380,100498,35,Gaming focus
+150,Spark 20 Pro 2024,Tecno,4GB,128GB,4550mAh,180MP,6.2 AMOLED,Exynos 1380,61944,11,Fast Charging
+151,Pova 6 2023,Tecno,4GB,256GB,5961mAh,120MP,6.4 AMOLED,Exynos 1380,237923,64,Glass back
+152,Phantom V Fold 2023,Tecno,8GB,512GB,4376mAh,96MP,6.2 AMOLED,Exynos 1380,29363,79,Fast Charging
+156,Note 40 Pro 2025,Infinix,6GB,512GB,4514mAh,45MP,6.9 AMOLED,Helio G99,26096,87,Gaming focus
+162,Pop 8 2025,Tecno,16GB,64GB,4545mAh,156MP,6.7 AMOLED,Snapdragon 7 Gen 3,86324,52,Fast Charging
+171,Camon 30 Premier 2023,Tecno,12GB,512GB,5290mAh,146MP,6.4 AMOLED,Snapdragon 7 Gen 3,241196,54,AI Camera
+176,Zero 30 2023,Infinix,16GB,128GB,5298mAh,27MP,6.3 AMOLED,Exynos 1380,148646,84,Gaming focus
+178,Hot 40 2024,Infinix,12GB,512GB,5289mAh,97MP,6.9 AMOLED,Helio G99,144146,43,Water Resistant
+181,Camon 30 Premier 2023,Tecno,12GB,128GB,5950mAh,29MP,6.4 AMOLED,Exynos 1380,242996,72,Water Resistant
+183,Camon 30 Premier 2024,Tecno,12GB,256GB,4135mAh,43MP,6.4 AMOLED,Helio G99,94354,96,Water Resistant
+187,Spark 20 Pro 2023,Tecno,4GB,512GB,5047mAh,143MP,6.8 AMOLED,Exynos 1380,71715,94,Fast Charging
+193,Smart 8 2023,Infinix,4GB,64GB,4858mAh,38MP,6.7 AMOLED,Exynos 1380,240487,86,Water Resistant
+199,Spark 20 Pro 2025,Tecno,12GB,512GB,4409mAh,198MP,6.5 AMOLED,Helio G99,52238,30,Fast Charging
+200,Smart 8 2023,Infinix,16GB,256GB,5164mAh,193MP,6.8 AMOLED,Exynos 1380,143071,96,Glass back
+201,Realme 10 Pro 2026 Edition,Realme,8GB,128GB,5000mAh,108MP,"6.72"" LCD",Snapdragon 695,45262,9,Bezel-less display
+202,Camon 30 Premier 2023 2024 Edition,Tecno,12GB,512GB,5290mAh,146MP,6.4 AMOLED,Snapdragon 7 Gen 3,241704,23,AI Camera
+203,Galaxy A35 2026 Edition,Samsung,6GB,128GB,5000mAh,50+8MP,"6.6"" AMOLED",Exynos 1380,51968,35,Budget 5G
+204,Xiaomi 13 Ultra 2026 Edition,Xiaomi,12GB,256GB,5000mAh,50+50+50+50MP Leica,"6.73"" LTPO AMOLED",Snapdragon 8 Gen 2,175938,12,Leica master
+205,Galaxy S22 Ultra 2025 Edition,Samsung,12GB,256GB,5000mAh,108MP,"6.8"" AMOLED",Snapdragon 8 Gen 1,124549,49,Ultra performance
+206,Pixel 9a 2025 Edition,Google,8GB,128GB,4650mAh,64+13MP,"6.1"" OLED",Tensor G4,126032,14,"Google AI, Android 15"
+207,Pop 8 2025 2026 Edition,Tecno,6GB,512GB,5264mAh,147MP,6.4 AMOLED,Snapdragon 7 Gen 3,59068,40,Fast Charging
+208,Spark 20 Pro 2023 2026 Edition,Tecno,4GB,512GB,5047mAh,143MP,6.8 AMOLED,Exynos 1380,65504,37,Fast Charging
+209,Realme C67 2024 Edition,Realme,8GB,128GB,5000mAh,108MP,"6.72"" LCD",Snapdragon 685,34869,33,"90Hz, NFC"
+210,Galaxy A73 2025 Edition,Samsung,8GB,128GB,5000mAh,108MP,"6.7"" Super AMOLED+",Snapdragon 778G,89977,6,Midrange king
+211,Realme C53 2024 Edition,Realme,6GB,128GB,5000mAh,50MP,"6.74"" LCD",Tiger T612,31744,22,Champion design
+212,iPhone 14 2024 Edition,Apple,6GB,128GB,3279mAh,12+12MP,"6.1"" Retina",A15 Bionic,153628,46,Crash Detection
+213,Pixel 9a 2026 Edition,Google,8GB,128GB,4650mAh,64+13MP,"6.1"" OLED",Tensor G4,103687,42,"Google AI, Android 15"
+214,iPhone 14 2026 Edition,Apple,6GB,128GB,3279mAh,12+12MP,"6.1"" Retina",A15 Bionic,155203,37,Crash Detection
+215,Oppo F21 Pro 2025 Edition,Oppo,8GB,128GB,4500mAh,64MP,"6.43"" AMOLED",Snapdragon 680,44827,26,Fiberglass leather
+216,Camon 30 Premier 2025 2026 Edition,Tecno,6GB,128GB,4786mAh,197MP,6.8 AMOLED,Exynos 1380,214617,10,Fast Charging
+217,Realme C53 2024 Edition,Realme,6GB,128GB,5000mAh,50MP,"6.74"" LCD",Tiger T612,32791,19,Champion design
+218,Galaxy A15 2024 Edition,Samsung,6GB,128GB,5000mAh,50+5MP,"6.5"" AMOLED",Helio G99,45743,17,"Budget, Super AMOLED"
+219,Oppo A3 Pro 2025 Edition,Oppo,8GB,256GB,5100mAh,50MP,"6.67"" AMOLED",Snapdragon 6 Gen1,50867,25,"IP69, 67W charging"
+220,iPhone 15 Plus 2025 Edition,Apple,6GB,128GB,4383mAh,48+12MP,"6.7"" Retina",A16 Bionic,211369,31,Big battery
+221,Oppo Reno 10 Pro+ 2025 Edition,Oppo,12GB,256GB,4700mAh,50+64+8MP,"6.74"" AMOLED",Snapdragon 8+ Gen 1,113755,46,Periscope zoom
+222,Oppo Reno11 2025 Edition,Oppo,8GB,256GB,5000mAh,50+32MP,"6.7"" AMOLED",Dimensity 8200,88562,50,67W charging
+223,Oppo F21 Pro 2024 Edition,Oppo,8GB,128GB,4500mAh,64MP,"6.43"" AMOLED",Snapdragon 680,44963,28,Fiberglass leather
+224,Vivo Y27s 2024 Edition,Vivo,8GB,128GB,5000mAh,50MP,"6.64"" LCD",Snapdragon 680,39134,37,Balanced performance
+225,Oppo A58 2026 Edition,Oppo,6GB,128GB,5000mAh,50MP,"6.72"" LCD",Helio G85,32742,26,Stylish budget
+226,Vivo V29 Pro 2026 Edition,Vivo,12GB,256GB,4600mAh,50+12+8MP,"6.78"" AMOLED",Dimensity 8200,86694,28,Portrait expert
+227,Pixel 8 2024 Edition,Google,8GB,128GB,4575mAh,50+12MP,"6.2"" Actua Display",Tensor G3,105706,34,Compact AI
+228,Galaxy S24 2024 Edition,Samsung,8GB,128GB,4000mAh,50+12+10MP,"6.2"" AMOLED",Exynos 2400,144107,40,Compact flagship
+229,Xiaomi 14 Ultra 2024 Edition,Xiaomi,16GB,512GB,5300mAh,50+50MP Leica,"6.73"" AMOLED",Snapdragon 8 Gen3,220309,18,"Leica optics, 90W charging"
+230,Vivo X200 Pro 2026 Edition,Vivo,16GB,512GB,6000mAh,50+200+50MP,"6.78"" AMOLED",Dimensity 9400,210211,50,"Zeiss optics, BlueVolt"
+231,Realme 11 Pro+ 2024 Edition,Realme,12GB,256GB,5000mAh,200MP,"6.7"" AMOLED",Dimensity 7050,82399,39,Design focus
+232,Galaxy A35 2024 Edition,Samsung,6GB,128GB,5000mAh,50+8MP,"6.6"" AMOLED",Exynos 1380,58503,38,Budget 5G
+233,Pixel 7a 2025 Edition,Google,8GB,128GB,4385mAh,64MP,"6.1"" OLED",Tensor G2,71463,30,Budget Google
+234,Oppo Find X7 Ultra 2025 Edition,Oppo,16GB,512GB,5000mAh,50+50MP Hasselblad,"6.82"" AMOLED",Snapdragon 8 Gen3,227386,6,"Hasselblad, 100W charging"
+235,Xiaomi 12T Pro 2025 Edition,Xiaomi,12GB,256GB,5000mAh,200MP,"6.67"" AMOLED",Snapdragon 8+ Gen 1,100549,44,HyperCharge
+236,Oppo A78 2024 Edition,Oppo,8GB,128GB,5000mAh,50MP,"6.43"" AMOLED",Snapdragon 680,42437,18,90Hz refresh rate
+237,OnePlus 12 2025 Edition,OnePlus,16GB,256GB,5400mAh,50+64MP,"6.82"" AMOLED",Snapdragon 8 Gen3,170068,23,"Hasselblad, 120Hz"
+238,Pova 6 2024 2025 Edition,Tecno,12GB,256GB,5461mAh,126MP,6.8 AMOLED,Snapdragon 8 Gen 3,149972,29,Water Resistant
+239,Pixel 6a 2025 Edition,Google,6GB,128GB,4410mAh,12.2+12MP,"6.1"" OLED",Tensor,41442,16,Small & fast
+240,iPhone SE 2025 2024 Edition,Apple,4GB,128GB,3200mAh,12MP,"6.1"" Retina",A18,97548,10,Budget flagship
+241,Xiaomi 12T Pro 2025 Edition,Xiaomi,12GB,256GB,5000mAh,200MP,"6.67"" AMOLED",Snapdragon 8+ Gen 1,87854,20,HyperCharge
+242,Zero 30 2023 2025 Edition,Infinix,16GB,128GB,5298mAh,27MP,6.3 AMOLED,Exynos 1380,138039,41,Gaming focus
+243,Pova 6 2024 2026 Edition,Tecno,12GB,256GB,5461mAh,126MP,6.8 AMOLED,Snapdragon 8 Gen 3,169896,36,Water Resistant
+244,Vivo X90 Pro 2024 Edition,Vivo,12GB,256GB,4870mAh,50+50+12MP Zeiss,"6.78"" AMOLED",Dimensity 9200,139232,24,Zeiss imaging
+245,OnePlus 12 2025 Edition,OnePlus,16GB,256GB,5400mAh,50+64MP,"6.82"" AMOLED",Snapdragon 8 Gen3,160189,28,"Hasselblad, 120Hz"
+246,Pixel 9a 2026 Edition,Google,8GB,128GB,4650mAh,64+13MP,"6.1"" OLED",Tensor G4,105570,49,"Google AI, Android 15"
+247,iPhone 16 Pro Max 2025 Edition,Apple,8GB,256GB,4685mAh,48+48+12MP,"6.9"" Retina",A18 Pro,418496,10,"Camera Control, Titanium"
+248,iPhone 13 2026 Edition,Apple,4GB,128GB,3240mAh,12+12MP,"6.1"" Retina",A15 Bionic,116046,38,Classic flagship
+249,Pop 8 2025 2025 Edition,Tecno,16GB,64GB,4545mAh,156MP,6.7 AMOLED,Snapdragon 7 Gen 3,88705,48,Fast Charging
+250,Vivo V30 2026 Edition,Vivo,8GB,256GB,5000mAh,50+50MP,"6.78"" AMOLED",Snapdragon 7 Gen3,88859,22,Zeiss T* lens
+251,Pixel 7 Pro 2026 Edition,Google,12GB,128GB,5000mAh,50+48+12MP,"6.7"" LTPO AMOLED",Tensor G2,90394,31,Pro features
+252,iPhone 14 Plus 2025 Edition,Apple,6GB,128GB,4323mAh,12+12MP,"6.7"" Retina",A15 Bionic,143110,6,Last gen plus
+253,Vivo Y200 2026 Edition,Vivo,8GB,128GB,5000mAh,64MP,"6.67"" AMOLED",Snapdragon 4 Gen2,49006,11,44W FlashCharge
+254,iPhone 14 2024 Edition,Apple,6GB,128GB,3279mAh,12+12MP,"6.1"" Retina",A15 Bionic,150803,17,Crash Detection
+255,iPhone SE 2025 2026 Edition,Apple,4GB,128GB,3200mAh,12MP,"6.1"" Retina",A18,89403,23,Budget flagship
+256,iPhone SE 2022 2024 Edition,Apple,4GB,64GB,2018mAh,12MP,"4.7"" Retina",A15 Bionic,52711,10,Compact classic
+257,Oppo Find X8 Pro 2024 Edition,Oppo,12GB,256GB,5910mAh,50+50+50+50MP,"6.78"" AMOLED",Dimensity 9400,209334,40,"Hasselblad, Dual Periscope"
+258,Hot 40 2024 2026 Edition,Infinix,12GB,512GB,5289mAh,97MP,6.9 AMOLED,Helio G99,139601,27,Water Resistant
+259,iPhone 12 2024 Edition,Apple,4GB,128GB,2815mAh,12+12MP,"6.1"" Retina",A14 Bionic,90052,7,Still capable
+260,Vivo V30 2026 Edition,Vivo,8GB,256GB,5000mAh,50+50MP,"6.78"" AMOLED",Snapdragon 7 Gen3,84091,27,Zeiss T* lens
+261,Oppo Reno 10 Pro+ 2026 Edition,Oppo,12GB,256GB,4700mAh,50+64+8MP,"6.74"" AMOLED",Snapdragon 8+ Gen 1,112435,5,Periscope zoom
+262,iPhone 15 2025 Edition,Apple,6GB,128GB,3349mAh,48+12MP,"6.1"" Retina",A16 Bionic,194362,10,"USB-C, Ceramic Shield"
+263,Galaxy S24 2026 Edition,Samsung,8GB,128GB,4000mAh,50+12+10MP,"6.2"" AMOLED",Exynos 2400,155965,35,Compact flagship
+264,iPhone 13 2024 Edition,Apple,4GB,128GB,3240mAh,12+12MP,"6.1"" Retina",A15 Bionic,130784,15,Classic flagship
+265,Phantom V Fold 2023 2024 Edition,Tecno,8GB,512GB,4376mAh,96MP,6.2 AMOLED,Exynos 1380,29669,17,Fast Charging
+266,iPhone 16 Pro Max 2025 Edition,Apple,8GB,256GB,4685mAh,48+48+12MP,"6.9"" Retina",A18 Pro,400939,44,"Camera Control, Titanium"
+267,Pixel 7 Pro 2025 Edition,Google,12GB,128GB,5000mAh,50+48+12MP,"6.7"" LTPO AMOLED",Tensor G2,93209,25,Pro features
+268,Phantom V Fold 2024 2026 Edition,Tecno,8GB,128GB,5813mAh,169MP,6.7 AMOLED,Snapdragon 8 Gen 3,167507,22,Gaming focus
+269,iPhone 16 2025 Edition,Apple,8GB,128GB,3561mAh,48+12MP,"6.1"" Retina",A18,221536,39,"Action Button, USB-C"
+270,Realme GT 7 Pro 2024 Edition,Realme,12GB,256GB,6500mAh,50+50+8MP,"6.78"" AMOLED",Snapdragon 8 Elite,139682,49,"120W, Eco2 Sky Screen"
+271,Phantom V Fold 2023 2025 Edition,Tecno,8GB,512GB,4376mAh,96MP,6.2 AMOLED,Exynos 1380,27990,33,Fast Charging
+272,Oppo A58 2024 Edition,Oppo,6GB,128GB,5000mAh,50MP,"6.72"" LCD",Helio G85,38118,13,Stylish budget
+273,iPhone SE 2022 2026 Edition,Apple,4GB,64GB,2018mAh,12MP,"4.7"" Retina",A15 Bionic,52846,20,Compact classic
+274,Pova 6 2023 2024 Edition,Tecno,4GB,256GB,5961mAh,120MP,6.4 AMOLED,Exynos 1380,228011,22,Glass back
+275,Xiaomi 14T Pro 2025 Edition,Xiaomi,12GB,256GB,5000mAh,50+50MP Leica,"6.67"" AMOLED",Dimensity 9300+,130689,5,120W charging
+276,Vivo X90 Pro 2024 Edition,Vivo,12GB,256GB,4870mAh,50+50+12MP Zeiss,"6.78"" AMOLED",Dimensity 9200,126848,39,Zeiss imaging
+277,Pop 8 2025 2025 Edition,Tecno,16GB,64GB,4545mAh,156MP,6.7 AMOLED,Snapdragon 7 Gen 3,85540,30,Fast Charging
+278,Pixel 7a 2024 Edition,Google,8GB,128GB,4385mAh,64MP,"6.1"" OLED",Tensor G2,62070,20,Budget Google
+279,iPhone 15 Pro Max 2024 Edition,Apple,8GB,256GB,4441mAh,48+12+12MP,"6.7"" Retina",A17 Pro,258215,21,"Titanium, USB-C, Action btn"
+280,Pixel 9 2025 Edition,Google,12GB,256GB,4700mAh,50+48MP,"6.3"" OLED",Tensor G4,145591,24,Pure Android experience
+281,Realme C53 2024 Edition,Realme,6GB,128GB,5000mAh,50MP,"6.74"" LCD",Tiger T612,33776,43,Champion design
+282,Pixel 7a 2026 Edition,Google,8GB,128GB,4385mAh,64MP,"6.1"" OLED",Tensor G2,68945,6,Budget Google
+283,Pixel 7 Pro 2025 Edition,Google,12GB,128GB,5000mAh,50+48+12MP,"6.7"" LTPO AMOLED",Tensor G2,85698,49,Pro features
+284,Xiaomi 14 2024 Edition,Xiaomi,12GB,256GB,4610mAh,50+50MP,"6.36"" AMOLED",Snapdragon 8 Gen3,174512,6,"HyperOS, compact flagship"
+285,OnePlus Nord 3 2025 Edition,OnePlus,16GB,256GB,5000mAh,50MP,"6.74"" Fluid AMOLED",Dimensity 9000,72721,37,Flagship killer

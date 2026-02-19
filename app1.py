@@ -4,14 +4,19 @@ from openai import OpenAI
 import os
 import re
 
+# RAG Imports
+from langchain_community.document_loaders.csv_loader import CSVLoader
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langchain_openai import OpenAIEmbeddings
+from langchain_community.vectorstores import FAISS
+
 # Configuration
 MODEL_NAME = "gpt-3.5-turbo"
 CSV_FILE = "MobileInventory.csv"
 
-# Initialize OpenAI Client
+# Initialize OpenAI Client (Base OpenAI used for Final Chat completion)
 api_key = os.getenv("OPENAI_API_KEY")
 if not api_key:
-    # Fallback to streamlit secrets if available, or show error
     if "OPENAI_API_KEY" in st.secrets:
         api_key = st.secrets["OPENAI_API_KEY"]
     else:
@@ -20,152 +25,102 @@ if not api_key:
 
 client = OpenAI(api_key=api_key)
 
-st.set_page_config(page_title="SLM Mobile AI", layout="wide", page_icon="📱")
+st.set_page_config(page_title="SLM Mobile AI - RAG Agent", layout="wide", page_icon="📱")
 
-# Custom Premium Styling (Light/Grey Theme for visibility)
+# Custom Premium Styling
 st.markdown("""
     <style>
-    /* Premium Grey Theme */
     :root {
         --bg-color: #ffffff;
         --sidebar-bg: #f8f9fa;
         --text-main: #1a1a1a;
-        --text-secondary: #444444;
         --accent-blue: #00d2ff;
         --border-color: #e0e0e0;
     }
-
-    .main {
-        background-color: var(--bg-color);
-        color: var(--text-main);
-    }
-    
-    [data-testid="stSidebar"] {
-        background-color: var(--sidebar-bg);
-        border-right: 1px solid var(--border-color);
-    }
-
-    [data-testid="stSidebar"] [data-testid="stMarkdownContainer"] p {
-        color: var(--text-main) !important;
-    }
-
-    .stChatMessage {
-        background-color: transparent !important;
-        border-bottom: 1px solid #f0f0f0 !important;
-        padding: 1.5rem 0 !important;
-        max-width: 800px;
-        margin: 0 auto !important;
-    }
-
-    /* Message content styling */
-    .stChatMessage [data-testid="stMarkdownContainer"] p {
-        color: var(--text-main) !important;
-        font-size: 1.05rem;
-        line-height: 1.6;
-    }
-
-    /* Input area styling */
-    .stChatInputContainer {
-        background-color: white !important;
-        padding-bottom: 20px;
-    }
-    
-    .stChatInputContainer textarea {
-        background-color: #ffffff !important;
-        color: #1a1a1a !important;
-        border: 1px solid #cccccc !important;
-        border-radius: 12px !important;
-    }
-
-    h1, h2, h3 {
-        color: #1a1a1a !important;
-        font-family: 'Inter', sans-serif;
-        font-weight: 600;
-    }
-
-    /* Hide streamlit clutter */
-    #MainMenu {visibility: hidden;}
-    footer {visibility: hidden;}
-    
-    .stMetric {
-        background: white;
-        padding: 15px;
-        border-radius: 12px;
-        border: 1px solid #e0e0e0;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    }
-    
-    [data-testid="stMetricLabel"] {
-        color: #666666 !important;
-    }
-    
-    [data-testid="stMetricValue"] {
-        color: #1a1a1a !important;
-    }
-    
-    .logo-container {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        margin-bottom: 2rem;
-        padding: 10px;
-    }
-    
-    .logo-text {
-        font-size: 1.4rem;
-        font-weight: 700;
-        color: #1a1a1a;
-    }
+    .main { background-color: var(--bg-color); color: var(--text-main); }
+    [data-testid="stSidebar"] { background-color: var(--sidebar-bg); border-right: 1px solid var(--border-color); }
+    .stChatMessage { border-bottom: 1px solid #f0f0f0 !important; padding: 1.5rem 0 !important; max-width: 800px; margin: 0 auto !important; }
+    .logo-container { display: flex; align-items: center; gap: 12px; margin-bottom: 2rem; padding: 10px; }
+    .logo-text { font-size: 1.4rem; font-weight: 700; color: #1a1a1a; }
     </style>
 """, unsafe_allow_html=True)
 
+# --- RAG INITIALIZATION ---
+@st.cache_resource
+def initialize_rag():
+    try:
+        # 1. Document Loader
+        loader = CSVLoader(file_path=CSV_FILE, encoding='utf-8')
+        documents = loader.load()
+
+        # 2. Chunking (Each row is a chunk for structured data)
+        text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=0)
+        chunks = text_splitter.split_documents(documents)
+
+        # 3. Embeddings
+        embeddings = OpenAIEmbeddings(openai_api_key=api_key)
+
+        # 4. Vector DB (FAISS)
+        vector_db = FAISS.from_documents(chunks, embeddings)
+        
+        return vector_db
+    except Exception as e:
+        st.error(f"Error initializing RAG: {e}")
+        return None
+
+vector_db = initialize_rag()
+
+def rerank_context(query, initial_docs):
+    """
+    Reranking Concept: 
+    After initial retrieval from FAISS (which uses semantic similarity), 
+    we use the LLM to 'rerank' or filter the most relevant items 
+    to ensure the context window is high-quality.
+    """
+    if not initial_docs:
+        return "No data found."
+    
+    # Combine initial docs into a list for the LLM to evaluate
+    context_to_rerank = "\n\n".join([f"DOC {i+1}:\n{doc.page_content}" for i, doc in enumerate(initial_docs)])
+    
+    rerank_prompt = f"""You are a RAG Re-ranker. Given the query '{query}', select the TOP 8 most relevant mobile phone models from the list below. 
+    Return only the content of those models, separated by newlines.
+    
+    MODELS FOUND:
+    {context_to_rerank}
+    """
+    
+    try:
+        response = client.chat.completions.create(
+            model="gpt-3.5-turbo",
+            messages=[{"role": "system", "content": "You are a professional inventory filterer."},
+                      {"role": "user", "content": rerank_prompt}],
+            temperature=0
+        )
+        return response.choices[0].message.content
+    except:
+        # Fallback to initial docs if reranking fails
+        return "\n\n".join([doc.page_content for doc in initial_docs[:8]])
+
+def get_relevant_context(query):
+    if vector_db:
+        # Stage 1: Retrieval (Get 20 candidates)
+        initial_docs = vector_db.similarity_search(query, k=20)
+        
+        # Stage 2: Reranking (Refine to best 8)
+        reranked_docs = rerank_context(query, initial_docs)
+        return reranked_docs
+    return "No inventory data found."
+
+# --- DATA FOR DASHBOARD ---
 def load_data():
     if os.path.exists(CSV_FILE):
-        try:
-            return pd.read_csv(CSV_FILE)
-        except Exception as e:
-            st.error(f"Error reading CSV file: {e}")
-            return None
+        return pd.read_csv(CSV_FILE)
     return None
 
-def search_data(df, query):
-    if df is None or df.empty:
-        return ""
-    
-    query = query.lower()
-    brands = [b.lower() for b in df['Brand'].unique()]
-    
-    # Check if a specific brand is the main subject
-    queried_brand = None
-    for brand in brands:
-        if brand in query:
-            queried_brand = brand
-            break
-            
-    if queried_brand:
-        # If brand is mentioned, get ALL models for that brand
-        relevant_rows = df[df['Brand'].str.lower() == queried_brand]
-    else:
-        # General search with higher limit
-        query_terms = [re.escape(term) for term in query.split()]
-        if not query_terms:
-             return ""
-        mask = df.apply(lambda row: row.astype(str).str.contains('|'.join(query_terms), case=False).any(), axis=1)
-        relevant_rows = df[mask]
-        # Increase limit to 15 for better context
-        if len(relevant_rows) > 15:
-            relevant_rows = relevant_rows.head(15)
-        
-    if relevant_rows.empty:
-        return ""
-        
-    return relevant_rows.to_markdown(index=False)
-
-# Dashboard Logic
 df = load_data()
 
 with st.sidebar:
-    # Adding Logo
     st.markdown("""
         <div class="logo-container">
             <img src="https://img.icons8.com/ios-filled/50/4a90e2/iphone-x.png" width="35">
@@ -174,32 +129,30 @@ with st.sidebar:
     """, unsafe_allow_html=True)
     
     if df is not None:
-        st.subheader("Inventory Status")
+        st.subheader("Inventory Metrics")
         m1, m2 = st.columns(2)
         with m1:
-            st.metric("Total Models", len(df))
+            top_10 = ['Apple', 'Samsung', 'Google', 'OnePlus', 'Xiaomi', 'Vivo', 'Oppo', 'Realme', 'Infinix', 'Tecno']
+            display_df = df[df['Brand'].isin(top_10)]
+            st.metric("Models Available", len(display_df))
         with m2:
-            st.metric("Unique Brands", df['Brand'].nunique())
-            
+            st.metric("Total Brands", display_df['Brand'].nunique())
         st.divider()
-        st.metric("Total Stock", df['Stock'].sum())
-
-        st.divider()
-        st.caption("Active Inventory v4.2")
+        st.info("✨ Providing expert mobile advice and current availability.")
     else:
-        st.error(f"File '{CSV_FILE}' not found.")
+        st.error(f"Inventory data not accessible.")
 
 # Chat initialization
 if "messages" not in st.session_state:
-    st.session_state["messages"] = [{"role": "assistant", "content": "👋 Welcome to SLM Mobile AI. I'm your premium assistant for finding the perfect mobile device. What can I do for you today?"}]
+    st.session_state["messages"] = [{"role": "assistant", "content": "Hello! I'm your SLM Mobile expert. How can I help you find the perfect device today?"}]
 
-# Centered container for chat
+# Header
 st.markdown("""
     <div style="text-align: center; padding: 20px 0 40px 0;">
         <h1 style="font-size: 3rem; font-weight: 800; color: #1a1a1a; margin-bottom: 5px;">
-            📱 SLM <span style="color: #00d2ff;">Mobile</span> Inventory
+            📱 SLM <span style="color: #00d2ff;">Mobile</span> Expert
         </h1>
-        <p style="color: #666; font-size: 1.1rem; letter-spacing: 1px;">PREMIUM AI ASSISTANT</p>
+        <p style="color: #666; font-size: 1.1rem; letter-spacing: 1px;">PREMIUM ASSISTANCE</p>
     </div>
 """, unsafe_allow_html=True)
 
@@ -215,58 +168,51 @@ if prompt := st.chat_input("Message SLM Mobile AI..."):
     with st.chat_message("user"):
         st.markdown(prompt)
 
-    # 1. Search for relevant data
-    context_data = ""
-    global_metadata = ""
-    if df is not None:
-        context_data = search_data(df, prompt)
-        # Prepare a summary of available brands and inventory
-        brands = df['Brand'].unique().tolist()
-        total_items = len(df)
-        global_metadata = f"Available Brands: {', '.join(brands)}. Total unique models in stock: {total_items}."
+    # 1. Global Awareness (To handle general questions like 'what brands do you have?')
+    all_brands = sorted(df['Brand'].unique().tolist()) if df is not None else []
+    total_inventory = len(df) if df is not None else 0
+    global_inventory_summary = f"Total Unique Models: {total_inventory}. Brands in Stock: {', '.join(all_brands)}."
 
-    # 2. Construct Prompt
-    system_prompt = f"""You are the **Lead Sales Concierge** at SLM Mobile World. Your goal is to provide a premium, white-glove experience.
+    # 2. Internal RAG Logic (Hidden from user)
+    initial_docs = vector_db.similarity_search(prompt, k=20) if vector_db else []
+    context_data = rerank_context(prompt, initial_docs) if initial_docs else "No specific context found."
 
-    You have access to a full inventory of {total_items} products. When a user asks for a specific brand (e.g., "Apple" or "Samsung"), you MUST list ALL models for that brand found in the context below. Do not omit any items.
-
-    **GLOBAL INVENTORY OVERVIEW:**
-    {global_metadata}
+    # 3. Construct Professional Prompt
+    system_prompt = f"""You are SLM Mobile AI, a highly sophisticated and professional mobile expert assistant.
     
-    **SPECIFIC MODELS FOUND IN DATABASE:**
-    {context_data if context_data else "No specific models matched your prompt in our database."}
-
-    **STRICT RESPONSE PROTOCOL:**
-    1. **Complete Listing**: If a brand is requested, display EVERY model for that brand provided in the context.
-    2. **Premium Style**: Use bold text for emphasis and bullet points for detailed specs.
-    3. **Pricing Requirement**: You MUST include the price in PKR for every device mentioned.
-    4. **No Hallucination**: Only talk about phones listed in the 'SPECIFIC MODELS FOUND' section.
-    5. **Markdown Tables**: For lists of 4 or more models, use a Markdown table (Columns: Model Name, RAM, Storage, Price PKR).
-    6. **Closing**: End with a helpful follow-up question.
+    **GLOBAL KNOWLEDGE:**
+    {global_inventory_summary}
+    
+    **SPECIFIC INVENTORY DATA (FOR RELEVANT QUERIES):**
+    {context_data}
+    
+    **INSTRUCTIONS:**
+    1. **Conversational Excellence**: Respond naturally. If asked about brands or general stock, use the GLOBAL KNOWLEDGE. If asked about specific models or specs, use the SPECIFIC INVENTORY DATA.
+    2. **Accuracy**: Do not mention technical terms like "RAG," "Vector DB," or "retrieved data." 
+    3. **Presentation**: Use bold text for model names. Use structured tables for comparing 3 or more devices.
+    4. **Pricing**: Always mention prices in PKR.
+    5. **Integrity**: If a user asks for something we don't carry, check the GLOBAL KNOWLEDGE brands and suggest the best alternative from those brands using the SEARCH DATA.
+    6. **Tone**: Helpful, elite, and precise. Like a premium concierge.
     """
 
-
-
-    # 3. Call Model (Non-Streaming for instant-feel feel if fast, or just wait if slow)
-    with st.spinner(f"Checking stock..."):
+    # 4. Call Model with a clean loading state
+    with st.chat_message("assistant"):
+        response_placeholder = st.empty()
+        full_response = ""
+        
         try:
-            full_response = ""
-            # Stream=False generates faster on some backends as it doesn't flush every token
-            # Include full conversation history for memory
             messages_payload = [{'role': 'system', 'content': system_prompt}] + st.session_state["messages"]
             
-            response = client.chat.completions.create(
-                model=MODEL_NAME,
-                messages=messages_payload,
-                stream=False,
-            )
-            
-            full_response = response.choices[0].message.content
-            
-            # Save to history
+            with st.spinner(" "): 
+                response = client.chat.completions.create(
+                    model=MODEL_NAME,
+                    messages=messages_payload,
+                    stream=False,
+                )
+                full_response = response.choices[0].message.content
+                
+            response_placeholder.markdown(full_response)
             st.session_state["messages"].append({"role": "assistant", "content": full_response})
-            st.chat_message("assistant").write(full_response)
 
         except Exception as e:
-            st.error(f"OpenAI Error: {str(e)}")
-            st.info("Please check your API key and internet connection.")
+            st.error("I encountered a brief connection issue. Please try again.")
