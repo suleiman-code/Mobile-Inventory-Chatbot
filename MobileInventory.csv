@@ -199,3 +199,303 @@ ID,Name,Brand,RAM,Storage,Battery,Camera,Display,Processor,Price PKR,Stock,Featu
 283,Pixel 7 Pro 2025 Edition,Google,12GB,128GB,5000mAh,50+48+12MP,"6.7"" LTPO AMOLED",Tensor G2,85698,49,Pro features
 284,Xiaomi 14 2024 Edition,Xiaomi,12GB,256GB,4610mAh,50+50MP,"6.36"" AMOLED",Snapdragon 8 Gen3,174512,6,"HyperOS, compact flagship"
 285,OnePlus Nord 3 2025 Edition,OnePlus,16GB,256GB,5000mAh,50MP,"6.74"" Fluid AMOLED",Dimensity 9000,72721,37,Flagship killer
+286,Galaxy S24 Edition,Samsung,16GB,256GB,5824mAh,157MP + 47MP,"6.1"" OLED",Snapdragon 8 Gen 2,205215,11,Fast Charging
+287,Camon 30 Premier Lite,Tecno,16GB,256GB,5711mAh,147MP + 37MP,"6.1"" OLED",Dimensity 9300,44816,28,Fast Charging
+288,Galaxy S24 Ultra Lite,Samsung,6GB,512GB,5385mAh,71MP + 37MP,"6.5"" LCD",Tensor G4,333052,86,AI Enabled
+289,OnePlus 11,OnePlus,4GB,128GB,4799mAh,86MP + 35MP,"6.8"" AMOLED",Snapdragon 8 Gen 3,205570,82,Face ID
+290,Galaxy M34 Max,Samsung,6GB,1TB,4865mAh,194MP + 42MP,"6.7"" AMOLED",Helio G99,279999,12,AI Enabled
+291,Pop 8 Neo,Tecno,4GB,128GB,4903mAh,156MP + 12MP,"6.1"" OLED",Dimensity 9300,176295,34,Slim Design
+292,Realme Narzo 70 Pro Max,Realme,16GB,128GB,5000mAh,132MP + 16MP,"6.1"" OLED",A18 Pro,241173,60,AI Enabled
+293,Xiaomi 14 Max,Xiaomi,12GB,128GB,5609mAh,96MP + 27MP,"6.8"" AMOLED",Snapdragon 8 Gen 2,325390,88,Fast Charging
+294,Xiaomi 14 Ultra Edition,Xiaomi,8GB,512GB,4717mAh,92MP + 11MP,"6.7"" AMOLED",Snapdragon 8 Gen 2,337004,39,AI Enabled
+295,Pixel 8 Pro Pro,Google,6GB,256GB,5370mAh,122MP + 41MP,"6.7"" AMOLED",Snapdragon 8 Gen 2,158621,51,Gaming Mode
+296,Vivo Y58 Lite,Vivo,16GB,512GB,5795mAh,97MP + 20MP,"6.8"" AMOLED",Exynos 2400,74565,89,Fast Charging
+297,Note 40 Pro Max,Infinix,4GB,256GB,5826mAh,169MP + 20MP,"6.7"" AMOLED",Tensor G4,213826,33,Slim Design
+298,Galaxy F54,Samsung,12GB,1TB,5357mAh,97MP + 30MP,"6.1"" OLED",Dimensity 9300,78578,69,Face ID
+299,Xiaomi 14 Max,Xiaomi,4GB,64GB,5147mAh,53MP + 31MP,"6.1"" OLED",Exynos 2400,75605,50,Face ID
+300,Galaxy S24 Ultra Lite,Samsung,6GB,64GB,5040mAh,200MP + 23MP,"6.1"" OLED",A18 Pro,321826,55,AI Enabled
+301,Galaxy M34 Pro,Samsung,6GB,1TB,5770mAh,179MP + 48MP,"6.1"" OLED",Exynos 2400,162158,11,Fast Charging
+302,GT 20 Pro Lite,Infinix,12GB,1TB,4140mAh,142MP + 10MP,"6.1"" OLED",Helio G99,139382,33,AI Enabled
+303,Oppo A3 Pro Max,Oppo,16GB,64GB,4932mAh,49MP + 28MP,"6.7"" AMOLED",Dimensity 9300,81727,20,Gaming Mode
+304,Vivo Y58 Neo,Vivo,8GB,1TB,5155mAh,116MP + 9MP,"6.5"" LCD",Snapdragon 8 Gen 3,114847,89,Face ID
+305,Vivo V40 Neo,Vivo,6GB,128GB,4694mAh,107MP + 19MP,"6.5"" LCD",A18 Pro,107044,37,Fast Charging
+306,iPhone 16 Edition,Apple,8GB,512GB,5550mAh,179MP + 27MP,"6.7"" AMOLED",A18 Pro,212827,17,Slim Design
+307,iPhone 16 Pro Lite,Apple,16GB,64GB,5460mAh,137MP + 41MP,"6.8"" AMOLED",A18 Pro,42323,92,Face ID
+308,iPhone 16 Pro Pro,Apple,16GB,1TB,5952mAh,176MP + 13MP,"6.1"" OLED",A18 Pro,118890,45,AI Enabled
+309,Spark 10 Pro Neo,Tecno,16GB,128GB,5067mAh,116MP + 30MP,"6.5"" LCD",Tensor G4,165762,8,Fast Charging
+310,Oppo Reno 11 Max,Oppo,4GB,256GB,4171mAh,55MP + 48MP,"6.7"" AMOLED",Dimensity 9300,129802,63,Slim Design
+311,OnePlus 11 Edition,OnePlus,6GB,64GB,5341mAh,183MP + 35MP,"6.8"" AMOLED",Snapdragon 8 Gen 2,267320,9,Gaming Mode
+312,Xiaomi 14 Ultra,Xiaomi,16GB,512GB,4740mAh,49MP + 38MP,"6.7"" AMOLED",Snapdragon 8 Gen 2,131334,71,Slim Design
+313,Pova 6 Pro Edition,Tecno,6GB,64GB,4405mAh,69MP + 9MP,"6.5"" LCD",Exynos 2400,74665,84,AI Enabled
+314,Redmi Note 13 Pro+ Edition,Xiaomi,12GB,64GB,5103mAh,194MP + 31MP,"6.1"" OLED",Snapdragon 8 Gen 2,159348,44,AI Enabled
+315,Vivo Y200e Max,Vivo,4GB,512GB,5692mAh,158MP + 34MP,"6.7"" AMOLED",Snapdragon 8 Gen 2,245915,15,Gaming Mode
+316,Oppo Reno 12 Pro Pro,Oppo,6GB,64GB,4885mAh,142MP + 23MP,"6.1"" OLED",Tensor G4,209282,32,AI Enabled
+317,OnePlus Nord CE 4 Max,OnePlus,8GB,128GB,5985mAh,128MP + 46MP,"6.1"" OLED",Snapdragon 8 Gen 3,344759,8,Face ID
+318,Phantom V Fold 2 Pro,Tecno,8GB,256GB,5756mAh,198MP + 12MP,"6.8"" AMOLED",Snapdragon 8 Gen 3,150792,85,Face ID
+319,Realme 12 Pro+ Max,Realme,16GB,1TB,4236mAh,134MP + 40MP,"6.8"" AMOLED",Snapdragon 8 Gen 2,103943,42,AI Enabled
+320,iPhone 16 Plus Edition,Apple,4GB,256GB,5279mAh,170MP + 21MP,"6.5"" LCD",Dimensity 9300,323159,41,Fast Charging
+321,Xiaomi 14 Pro,Xiaomi,12GB,256GB,4423mAh,141MP + 49MP,"6.7"" AMOLED",Exynos 2400,298788,67,AI Enabled
+322,Galaxy S24 Ultra Pro,Samsung,12GB,128GB,5642mAh,112MP + 44MP,"6.8"" AMOLED",Helio G99,176768,84,Gaming Mode
+323,GT 20 Pro,Infinix,8GB,1TB,4412mAh,168MP + 23MP,"6.8"" AMOLED",Tensor G4,131238,48,Face ID
+324,OnePlus Nord CE 4 Edition,OnePlus,8GB,128GB,4197mAh,54MP + 30MP,"6.7"" AMOLED",Exynos 2400,41999,58,AI Enabled
+325,Spark 10 Pro Edition,Tecno,4GB,64GB,5533mAh,77MP + 29MP,"6.8"" AMOLED",Helio G99,185353,42,AI Enabled
+326,iPhone 16 Pro Edition,Apple,16GB,512GB,4517mAh,172MP + 42MP,"6.1"" OLED",Tensor G4,94089,46,Fast Charging
+327,iPhone 13 Mini Max,Apple,4GB,1TB,5682mAh,161MP + 28MP,"6.7"" AMOLED",Snapdragon 8 Gen 3,344229,19,Gaming Mode
+328,OnePlus Nord 4,OnePlus,4GB,512GB,5479mAh,97MP + 28MP,"6.8"" AMOLED",A18 Pro,205626,67,Face ID
+329,Poco F6 Pro,Xiaomi,12GB,128GB,4872mAh,107MP + 20MP,"6.8"" AMOLED",Dimensity 9300,290983,95,AI Enabled
+330,Oppo Reno 12 Pro Lite,Oppo,6GB,512GB,4126mAh,189MP + 21MP,"6.7"" AMOLED",A18 Pro,324353,9,Face ID
+331,Vivo X100 Pro Max,Vivo,16GB,64GB,4434mAh,86MP + 48MP,"6.7"" AMOLED",Exynos 2400,226294,42,Face ID
+332,iPhone 13 Mini Edition,Apple,8GB,256GB,5253mAh,77MP + 44MP,"6.1"" OLED",Helio G99,91823,59,AI Enabled
+333,Galaxy A55,Samsung,4GB,512GB,5036mAh,166MP + 29MP,"6.8"" AMOLED",A18 Pro,333258,64,Face ID
+334,Galaxy A55 Lite,Samsung,12GB,128GB,4430mAh,171MP + 34MP,"6.8"" AMOLED",Exynos 2400,178998,18,Fast Charging
+335,Realme 12 Pro+ Lite,Realme,16GB,256GB,4174mAh,174MP + 31MP,"6.7"" AMOLED",Snapdragon 8 Gen 2,258328,40,Gaming Mode
+336,OnePlus 12 Pro,OnePlus,6GB,256GB,5238mAh,98MP + 22MP,"6.7"" AMOLED",Exynos 2400,268128,38,AI Enabled
+337,iPhone 13 Mini Edition,Apple,12GB,256GB,4192mAh,48MP + 26MP,"6.1"" OLED",Snapdragon 8 Gen 3,88839,18,Face ID
+338,Galaxy M34 Pro,Samsung,16GB,256GB,4686mAh,89MP + 41MP,"6.5"" LCD",A18 Pro,324437,12,Slim Design
+339,Hot 40 Lite,Infinix,16GB,1TB,4503mAh,126MP + 18MP,"6.8"" AMOLED",Tensor G4,72357,7,Gaming Mode
+340,Oppo A78 Edition,Oppo,6GB,1TB,5932mAh,106MP + 38MP,"6.7"" AMOLED",Dimensity 9300,176098,21,AI Enabled
+341,Galaxy M34 Edition,Samsung,6GB,64GB,4279mAh,72MP + 40MP,"6.7"" AMOLED",Snapdragon 8 Gen 2,60094,99,Gaming Mode
+342,Realme C67 Edition,Realme,6GB,256GB,5781mAh,67MP + 39MP,"6.7"" AMOLED",Exynos 2400,46733,7,AI Enabled
+343,Pop 8 Pro,Tecno,8GB,128GB,5215mAh,59MP + 26MP,"6.7"" AMOLED",Snapdragon 8 Gen 2,239901,72,AI Enabled
+344,Pixel 9 Pro XL,Google,8GB,256GB,4780mAh,169MP + 40MP,"6.8"" AMOLED",Snapdragon 8 Gen 2,130786,51,AI Enabled
+345,Galaxy Z Fold 6 Max,Samsung,12GB,64GB,5587mAh,97MP + 23MP,"6.5"" LCD",Dimensity 9300,185589,45,Face ID
+346,Smart 8 Pro Max,Infinix,8GB,256GB,5040mAh,101MP + 17MP,"6.8"" AMOLED",Helio G99,344070,70,Gaming Mode
+347,iPhone 15 Pro Max,Apple,12GB,128GB,5263mAh,98MP + 25MP,"6.1"" OLED",A18 Pro,309422,35,Fast Charging
+348,Note 30 VIP Edition,Infinix,8GB,64GB,4327mAh,125MP + 22MP,"6.1"" OLED",Helio G99,183068,11,Gaming Mode
+349,iPhone 16 Pro Lite,Apple,16GB,128GB,5717mAh,97MP + 33MP,"6.8"" AMOLED",Helio G99,177196,58,Fast Charging
+350,Pixel Fold,Google,12GB,128GB,5856mAh,176MP + 9MP,"6.5"" LCD",A18 Pro,163989,5,Fast Charging
+351,Pixel 8 Pro Pro,Google,6GB,512GB,4682mAh,57MP + 15MP,"6.8"" AMOLED",A18 Pro,74184,28,Gaming Mode
+352,Pixel Fold Neo,Google,6GB,1TB,5588mAh,52MP + 35MP,"6.7"" AMOLED",Exynos 2400,305168,79,Face ID
+353,Realme GT 6 Edition,Realme,12GB,64GB,5882mAh,180MP + 14MP,"6.1"" OLED",Snapdragon 8 Gen 3,249512,10,AI Enabled
+354,Xiaomi 13T Pro,Xiaomi,4GB,128GB,5706mAh,173MP + 23MP,"6.7"" AMOLED",Exynos 2400,186091,94,Fast Charging
+355,iPhone 14 Edition,Apple,12GB,1TB,4793mAh,191MP + 17MP,"6.8"" AMOLED",A18 Pro,281438,86,Face ID
+356,Galaxy S24 Pro,Samsung,4GB,1TB,5358mAh,169MP + 10MP,"6.8"" AMOLED",Snapdragon 8 Gen 3,204773,25,Gaming Mode
+357,Realme 12 Pro+ Max,Realme,16GB,256GB,4416mAh,60MP + 23MP,"6.5"" LCD",A18 Pro,259198,32,AI Enabled
+358,Oppo A78 Neo,Oppo,8GB,1TB,5372mAh,181MP + 48MP,"6.5"" LCD",Dimensity 9300,247700,84,Fast Charging
+359,Zero 30 Pro,Infinix,12GB,256GB,4173mAh,197MP + 26MP,"6.7"" AMOLED",Exynos 2400,251739,73,Slim Design
+360,OnePlus Nord CE 4 Pro,OnePlus,16GB,256GB,5790mAh,179MP + 45MP,"6.5"" LCD",Snapdragon 8 Gen 2,95677,98,Gaming Mode
+361,GT 20 Pro Max,Infinix,8GB,512GB,5503mAh,130MP + 12MP,"6.7"" AMOLED",Exynos 2400,276822,55,AI Enabled
+362,OnePlus Nord CE 4 Edition,OnePlus,12GB,64GB,5892mAh,167MP + 17MP,"6.5"" LCD",Helio G99,69046,97,Face ID
+363,Xiaomi 13T Pro Neo,Xiaomi,8GB,64GB,4975mAh,111MP + 14MP,"6.1"" OLED",Dimensity 9300,173830,88,Slim Design
+364,Pixel 7 Edition,Google,8GB,512GB,4950mAh,185MP + 46MP,"6.1"" OLED",Snapdragon 8 Gen 3,95393,14,Face ID
+365,Realme P1 Pro Edition,Realme,4GB,128GB,4839mAh,191MP + 21MP,"6.7"" AMOLED",Exynos 2400,91868,71,Fast Charging
+366,Galaxy Z Flip 6 Max,Samsung,12GB,128GB,5820mAh,158MP + 32MP,"6.1"" OLED",Snapdragon 8 Gen 3,233485,43,Face ID
+367,Phantom V Fold 2 Neo,Tecno,4GB,1TB,5094mAh,182MP + 25MP,"6.7"" AMOLED",Exynos 2400,71943,84,Face ID
+368,Realme 13 Pro Edition,Realme,8GB,1TB,5635mAh,183MP + 39MP,"6.1"" OLED",Dimensity 9300,293868,71,AI Enabled
+369,Pixel 8 Pro Max,Google,12GB,128GB,4057mAh,173MP + 18MP,"6.5"" LCD",Snapdragon 8 Gen 2,256772,27,AI Enabled
+370,Note 30 VIP Neo,Infinix,12GB,1TB,4440mAh,74MP + 40MP,"6.7"" AMOLED",Snapdragon 8 Gen 3,180528,94,Slim Design
+371,Pixel 8a Edition,Google,12GB,512GB,5210mAh,93MP + 22MP,"6.7"" AMOLED",Snapdragon 8 Gen 3,254912,17,Slim Design
+372,Realme P1 Pro Max,Realme,8GB,256GB,5775mAh,173MP + 35MP,"6.8"" AMOLED",Snapdragon 8 Gen 2,257429,55,AI Enabled
+373,Galaxy Z Flip 6,Samsung,8GB,1TB,4711mAh,169MP + 32MP,"6.7"" AMOLED",Snapdragon 8 Gen 3,274921,32,Gaming Mode
+374,Realme C67 Max,Realme,12GB,128GB,4594mAh,171MP + 9MP,"6.8"" AMOLED",A18 Pro,273000,33,AI Enabled
+375,GT 20 Pro Max,Infinix,16GB,128GB,4722mAh,84MP + 11MP,"6.1"" OLED",Helio G99,233133,50,Slim Design
+376,Poco X6 Pro Edition,Xiaomi,4GB,256GB,5031mAh,72MP + 29MP,"6.7"" AMOLED",Exynos 2400,100283,95,AI Enabled
+377,Pova 6 Pro Neo,Tecno,4GB,64GB,4721mAh,75MP + 42MP,"6.8"" AMOLED",Exynos 2400,206858,70,Fast Charging
+378,Xiaomi 13T Pro Pro,Xiaomi,12GB,512GB,5634mAh,67MP + 27MP,"6.7"" AMOLED",Dimensity 9300,162603,64,Slim Design
+379,Note 30 VIP Max,Infinix,12GB,64GB,5322mAh,136MP + 49MP,"6.1"" OLED",Tensor G4,118906,48,Fast Charging
+380,iPhone 15 Lite,Apple,6GB,1TB,5980mAh,170MP + 39MP,"6.1"" OLED",Dimensity 9300,104958,13,AI Enabled
+381,Vivo X100 Pro Lite,Vivo,16GB,1TB,5170mAh,106MP + 47MP,"6.5"" LCD",Exynos 2400,186493,80,Slim Design
+382,OnePlus 12R Edition,OnePlus,6GB,512GB,4296mAh,123MP + 49MP,"6.5"" LCD",Helio G99,77334,20,Slim Design
+383,Pixel Fold Edition,Google,8GB,1TB,5029mAh,82MP + 48MP,"6.1"" OLED",Snapdragon 8 Gen 2,286538,37,Fast Charging
+384,Oppo Reno 12 Pro Pro,Oppo,8GB,512GB,5187mAh,145MP + 15MP,"6.5"" LCD",Helio G99,172509,17,Face ID
+385,GT 20 Pro,Infinix,16GB,256GB,4914mAh,128MP + 8MP,"6.1"" OLED",Helio G99,44003,79,AI Enabled
+386,Oppo Find X7 Ultra Edition,Oppo,4GB,512GB,5477mAh,58MP + 13MP,"6.8"" AMOLED",Snapdragon 8 Gen 3,316018,12,Gaming Mode
+387,Galaxy F54 Max,Samsung,8GB,64GB,4297mAh,111MP + 49MP,"6.5"" LCD",Helio G99,47962,38,Gaming Mode
+388,GT 20 Pro Neo,Infinix,6GB,64GB,5842mAh,181MP + 20MP,"6.7"" AMOLED",Helio G99,104442,11,Gaming Mode
+389,Pixel 7a Pro,Google,8GB,128GB,4665mAh,81MP + 31MP,"6.8"" AMOLED",Snapdragon 8 Gen 2,68142,27,Fast Charging
+390,Galaxy S24 Pro,Samsung,8GB,1TB,5993mAh,71MP + 23MP,"6.8"" AMOLED",Exynos 2400,154166,59,Slim Design
+391,Galaxy M34,Samsung,4GB,512GB,4008mAh,99MP + 41MP,"6.1"" OLED",Tensor G4,132198,98,Slim Design
+392,Vivo V30 Pro,Vivo,8GB,256GB,4985mAh,85MP + 48MP,"6.1"" OLED",Helio G99,114107,42,Slim Design
+393,Pop 8 Edition,Tecno,4GB,256GB,5885mAh,146MP + 19MP,"6.5"" LCD",Helio G99,140524,86,Slim Design
+394,Note 30 VIP Neo,Infinix,16GB,512GB,5803mAh,176MP + 17MP,"6.8"" AMOLED",Snapdragon 8 Gen 3,79522,39,Fast Charging
+395,Realme P1 Pro Pro,Realme,8GB,128GB,5942mAh,141MP + 28MP,"6.1"" OLED",Exynos 2400,293265,13,Fast Charging
+396,Xiaomi 14 Ultra Neo,Xiaomi,8GB,256GB,5070mAh,69MP + 9MP,"6.5"" LCD",Snapdragon 8 Gen 3,167067,37,Gaming Mode
+397,iPhone 15,Apple,12GB,128GB,5671mAh,112MP + 27MP,"6.7"" AMOLED",Snapdragon 8 Gen 3,331052,77,Slim Design
+398,Redmi Note 13 Pro+ Max,Xiaomi,8GB,64GB,5517mAh,167MP + 26MP,"6.1"" OLED",Tensor G4,177541,49,Gaming Mode
+399,Xiaomi 14 Ultra Neo,Xiaomi,16GB,64GB,4672mAh,75MP + 30MP,"6.5"" LCD",Helio G99,40226,96,AI Enabled
+400,Pixel 9 Pro,Google,12GB,256GB,4308mAh,75MP + 21MP,"6.5"" LCD",Snapdragon 8 Gen 2,270784,63,AI Enabled
+401,Pixel 7 Pro,Google,4GB,128GB,4974mAh,130MP + 44MP,"6.1"" OLED",Helio G99,337133,31,Fast Charging
+402,Realme 12 Pro+,Realme,16GB,256GB,4474mAh,161MP + 49MP,"6.8"" AMOLED",Dimensity 9300,287130,49,Fast Charging
+403,Spark 20 Pro Pro,Tecno,12GB,512GB,4788mAh,150MP + 26MP,"6.5"" LCD",Exynos 2400,293751,96,Fast Charging
+404,OnePlus Nord 4,OnePlus,8GB,256GB,5754mAh,70MP + 16MP,"6.5"" LCD",Tensor G4,198464,77,AI Enabled
+405,iPhone 13 Mini Neo,Apple,12GB,1TB,4435mAh,76MP + 14MP,"6.7"" AMOLED",Helio G99,119571,40,Slim Design
+406,Note 40 Pro Max,Infinix,4GB,256GB,4721mAh,197MP + 13MP,"6.1"" OLED",Tensor G4,251915,70,Slim Design
+407,iPhone 15 Max,Apple,6GB,128GB,4170mAh,130MP + 30MP,"6.5"" LCD",Dimensity 9300,187197,18,Face ID
+408,Smart 8 Pro Lite,Infinix,16GB,128GB,5647mAh,78MP + 17MP,"6.1"" OLED",Exynos 2400,345330,38,Slim Design
+409,Oppo F27 Pro+,Oppo,12GB,128GB,5576mAh,84MP + 50MP,"6.7"" AMOLED",Helio G99,43646,21,Fast Charging
+410,iPhone 16 Plus Pro,Apple,6GB,64GB,5763mAh,176MP + 44MP,"6.5"" LCD",Tensor G4,198605,88,Fast Charging
+411,OnePlus 12,OnePlus,8GB,1TB,4852mAh,125MP + 25MP,"6.1"" OLED",Tensor G4,61963,69,Slim Design
+412,Pixel 7a,Google,16GB,128GB,4275mAh,159MP + 20MP,"6.1"" OLED",Snapdragon 8 Gen 2,289773,97,Face ID
+413,iPhone 16 Plus Lite,Apple,16GB,512GB,4497mAh,169MP + 44MP,"6.8"" AMOLED",Snapdragon 8 Gen 3,225581,70,AI Enabled
+414,iPhone 13 Mini Pro,Apple,16GB,128GB,5137mAh,163MP + 38MP,"6.7"" AMOLED",Exynos 2400,210319,78,Fast Charging
+415,iPhone 16 Pro,Apple,4GB,256GB,4970mAh,115MP + 16MP,"6.8"" AMOLED",Tensor G4,280427,47,Gaming Mode
+416,Zero 30 Edition,Infinix,6GB,512GB,4797mAh,99MP + 20MP,"6.7"" AMOLED",Helio G99,322974,43,Face ID
+417,Pixel 8 Pro Lite,Google,6GB,1TB,5432mAh,114MP + 40MP,"6.7"" AMOLED",Snapdragon 8 Gen 2,155054,8,Gaming Mode
+418,Realme C67 Pro,Realme,8GB,1TB,4248mAh,130MP + 44MP,"6.5"" LCD",Helio G99,300557,14,Fast Charging
+419,iPhone 13 Mini Pro,Apple,12GB,512GB,4580mAh,75MP + 47MP,"6.8"" AMOLED",Snapdragon 8 Gen 3,224887,14,Slim Design
+420,iPhone 16 Plus Edition,Apple,12GB,512GB,5148mAh,84MP + 14MP,"6.8"" AMOLED",Helio G99,107190,9,Gaming Mode
+421,Vivo V40 Pro,Vivo,12GB,256GB,4845mAh,78MP + 41MP,"6.5"" LCD",Snapdragon 8 Gen 3,265977,77,AI Enabled
+422,Pixel 8a Edition,Google,16GB,1TB,5327mAh,140MP + 9MP,"6.1"" OLED",Dimensity 9300,310298,34,Fast Charging
+423,Vivo Y200e Pro,Vivo,16GB,128GB,4000mAh,102MP + 26MP,"6.5"" LCD",Exynos 2400,189351,94,AI Enabled
+424,Hot 40 Edition,Infinix,12GB,128GB,5061mAh,93MP + 32MP,"6.8"" AMOLED",Dimensity 9300,81707,8,Slim Design
+425,OnePlus Open Edition,OnePlus,6GB,256GB,4989mAh,48MP + 11MP,"6.7"" AMOLED",A18 Pro,210806,28,Fast Charging
+426,Pixel Fold Lite,Google,12GB,64GB,5907mAh,191MP + 21MP,"6.5"" LCD",Dimensity 9300,298218,96,Fast Charging
+427,Xiaomi 14 Ultra Neo,Xiaomi,4GB,1TB,4490mAh,149MP + 46MP,"6.1"" OLED",Helio G99,133284,45,Face ID
+428,Note 40 Pro Pro,Infinix,12GB,1TB,5636mAh,189MP + 31MP,"6.5"" LCD",Helio G99,204931,58,Face ID
+429,Spark 20 Pro Pro,Tecno,6GB,512GB,5771mAh,175MP + 38MP,"6.8"" AMOLED",Snapdragon 8 Gen 2,245392,18,Gaming Mode
+430,Camon 30 Premier Pro,Tecno,6GB,64GB,4783mAh,175MP + 39MP,"6.5"" LCD",A18 Pro,196498,33,Face ID
+431,Realme 12 Pro+ Pro,Realme,6GB,512GB,5972mAh,185MP + 34MP,"6.5"" LCD",A18 Pro,57161,47,Slim Design
+432,OnePlus Nord 4 Pro,OnePlus,12GB,128GB,4391mAh,64MP + 45MP,"6.7"" AMOLED",Helio G99,79030,46,Fast Charging
+433,Pixel 7 Max,Google,12GB,512GB,4627mAh,77MP + 10MP,"6.5"" LCD",Helio G99,303617,8,AI Enabled
+434,Xiaomi 13T Pro,Xiaomi,4GB,128GB,4263mAh,82MP + 15MP,"6.1"" OLED",A18 Pro,151791,71,Face ID
+435,Realme P1 Pro Pro,Realme,8GB,256GB,5340mAh,56MP + 44MP,"6.8"" AMOLED",Snapdragon 8 Gen 3,129087,61,Gaming Mode
+436,Smart 8 Pro Neo,Infinix,12GB,512GB,4456mAh,130MP + 26MP,"6.7"" AMOLED",Tensor G4,148405,75,Fast Charging
+437,Oppo Reno 12 Pro Max,Oppo,6GB,128GB,5069mAh,74MP + 15MP,"6.1"" OLED",Dimensity 9300,138313,22,AI Enabled
+438,Pixel 8 Pro Max,Google,8GB,128GB,4651mAh,74MP + 21MP,"6.1"" OLED",Tensor G4,290215,84,Slim Design
+439,Poco F6 Neo,Xiaomi,4GB,64GB,5438mAh,130MP + 24MP,"6.8"" AMOLED",Dimensity 9300,95759,100,Face ID
+440,Xiaomi 13T Pro,Xiaomi,6GB,64GB,4591mAh,166MP + 46MP,"6.7"" AMOLED",Dimensity 9300,46185,41,Fast Charging
+441,OnePlus Open Lite,OnePlus,6GB,1TB,5654mAh,176MP + 24MP,"6.5"" LCD",Helio G99,251946,79,Fast Charging
+442,Vivo T3 Pro,Vivo,16GB,256GB,4767mAh,198MP + 19MP,"6.8"" AMOLED",Dimensity 9300,90068,37,AI Enabled
+443,Xiaomi 14 Ultra Lite,Xiaomi,8GB,1TB,5993mAh,184MP + 33MP,"6.7"" AMOLED",A18 Pro,157877,77,AI Enabled
+444,Poco F6 Lite,Xiaomi,4GB,256GB,4055mAh,187MP + 13MP,"6.7"" AMOLED",Helio G99,312170,28,Fast Charging
+445,OnePlus 11 Lite,OnePlus,8GB,128GB,4296mAh,122MP + 8MP,"6.1"" OLED",A18 Pro,248238,57,Slim Design
+446,Note 30 VIP Neo,Infinix,12GB,1TB,5649mAh,77MP + 36MP,"6.5"" LCD",Dimensity 9300,345781,25,Gaming Mode
+447,OnePlus Nord 4 Pro,OnePlus,12GB,1TB,5272mAh,75MP + 8MP,"6.8"" AMOLED",Helio G99,47369,100,Slim Design
+448,Pixel 8a Pro,Google,4GB,256GB,4461mAh,127MP + 22MP,"6.7"" AMOLED",A18 Pro,253376,42,Face ID
+449,Pixel 9 Pro Lite,Google,8GB,1TB,4922mAh,184MP + 48MP,"6.5"" LCD",Helio G99,242021,64,Fast Charging
+450,Hot 40 Lite,Infinix,6GB,1TB,4311mAh,163MP + 20MP,"6.7"" AMOLED",Dimensity 9300,118569,52,Slim Design
+451,Oppo Reno 11 Neo,Oppo,6GB,256GB,5258mAh,174MP + 36MP,"6.5"" LCD",Dimensity 9300,228952,49,AI Enabled
+452,Note 30 VIP Max,Infinix,12GB,64GB,4468mAh,102MP + 15MP,"6.8"" AMOLED",Tensor G4,218615,95,AI Enabled
+453,Vivo V30 Pro Edition,Vivo,4GB,256GB,4308mAh,126MP + 40MP,"6.1"" OLED",Tensor G4,79619,28,AI Enabled
+454,iPhone 16 Plus Neo,Apple,6GB,1TB,4611mAh,191MP + 31MP,"6.1"" OLED",Dimensity 9300,193492,42,Gaming Mode
+455,Note 30 VIP Max,Infinix,4GB,64GB,4031mAh,111MP + 32MP,"6.5"" LCD",Exynos 2400,168043,76,AI Enabled
+456,Note 40 Pro Max,Infinix,4GB,512GB,4448mAh,151MP + 15MP,"6.8"" AMOLED",Helio G99,258141,50,Face ID
+457,Pova 6 Pro Edition,Tecno,8GB,512GB,5116mAh,190MP + 37MP,"6.7"" AMOLED",Snapdragon 8 Gen 2,230719,94,Face ID
+458,Phantom V Fold 2 Edition,Tecno,4GB,64GB,5241mAh,89MP + 46MP,"6.7"" AMOLED",Tensor G4,254060,8,Fast Charging
+459,iPhone 14 Max,Apple,8GB,512GB,5012mAh,192MP + 18MP,"6.8"" AMOLED",A18 Pro,299145,71,Slim Design
+460,iPhone 14 Pro,Apple,12GB,128GB,5293mAh,128MP + 11MP,"6.5"" LCD",Helio G99,150920,61,Face ID
+461,Note 40 Pro Neo,Infinix,4GB,64GB,4105mAh,72MP + 20MP,"6.8"" AMOLED",Snapdragon 8 Gen 2,201774,18,Face ID
+462,iPhone 16 Plus,Apple,16GB,64GB,4811mAh,190MP + 27MP,"6.5"" LCD",Tensor G4,125134,8,AI Enabled
+463,Galaxy F54 Pro,Samsung,6GB,512GB,5064mAh,62MP + 31MP,"6.1"" OLED",Snapdragon 8 Gen 2,215011,61,AI Enabled
+464,Hot 40,Infinix,12GB,1TB,5660mAh,180MP + 18MP,"6.5"" LCD",Tensor G4,220874,89,Slim Design
+465,Vivo X100 Pro Lite,Vivo,16GB,512GB,4521mAh,140MP + 27MP,"6.1"" OLED",Dimensity 9300,335171,98,Slim Design
+466,Galaxy F54,Samsung,6GB,256GB,4940mAh,193MP + 32MP,"6.8"" AMOLED",Tensor G4,116925,91,Fast Charging
+467,Galaxy S24 Pro,Samsung,8GB,256GB,4413mAh,58MP + 46MP,"6.5"" LCD",Exynos 2400,44217,73,Slim Design
+468,iPhone 16,Apple,6GB,128GB,5668mAh,176MP + 36MP,"6.7"" AMOLED",Tensor G4,227554,72,Gaming Mode
+469,OnePlus 12R Max,OnePlus,16GB,1TB,5729mAh,51MP + 11MP,"6.7"" AMOLED",A18 Pro,160062,97,Face ID
+470,Realme GT 6 Max,Realme,12GB,1TB,5648mAh,54MP + 41MP,"6.1"" OLED",Exynos 2400,265651,17,Gaming Mode
+471,Vivo V30 Pro Max,Vivo,12GB,256GB,5403mAh,157MP + 23MP,"6.1"" OLED",Exynos 2400,261855,21,Gaming Mode
+472,OnePlus Open Max,OnePlus,16GB,1TB,5769mAh,135MP + 23MP,"6.5"" LCD",Snapdragon 8 Gen 3,54610,54,Fast Charging
+473,iPhone 16 Lite,Apple,8GB,1TB,5611mAh,122MP + 13MP,"6.1"" OLED",Snapdragon 8 Gen 2,228270,30,Fast Charging
+474,Vivo V40 Edition,Vivo,8GB,128GB,4047mAh,168MP + 41MP,"6.1"" OLED",Dimensity 9300,79457,81,Face ID
+475,Poco F6 Neo,Xiaomi,8GB,64GB,4424mAh,127MP + 9MP,"6.8"" AMOLED",Snapdragon 8 Gen 2,123096,68,Gaming Mode
+476,Pixel 8a Edition,Google,8GB,512GB,5040mAh,143MP + 41MP,"6.1"" OLED",Dimensity 9300,112807,18,Fast Charging
+477,iPhone SE 4 Neo,Apple,6GB,1TB,5131mAh,191MP + 35MP,"6.8"" AMOLED",Exynos 2400,170023,20,AI Enabled
+478,Xiaomi 14 Ultra Edition,Xiaomi,4GB,512GB,4681mAh,87MP + 31MP,"6.8"" AMOLED",Helio G99,117367,19,Gaming Mode
+479,Note 40 Pro Pro,Infinix,6GB,64GB,4151mAh,198MP + 48MP,"6.1"" OLED",Helio G99,219058,11,Fast Charging
+480,Vivo T3,Vivo,4GB,64GB,4808mAh,78MP + 28MP,"6.5"" LCD",Snapdragon 8 Gen 2,64864,37,Slim Design
+481,Camon 30 Premier,Tecno,16GB,512GB,4789mAh,60MP + 27MP,"6.8"" AMOLED",Tensor G4,58145,90,Gaming Mode
+482,Galaxy M34 Lite,Samsung,12GB,1TB,4199mAh,74MP + 26MP,"6.7"" AMOLED",Helio G99,185903,12,Gaming Mode
+483,Pop 8 Max,Tecno,4GB,128GB,4148mAh,165MP + 17MP,"6.7"" AMOLED",Dimensity 9300,87375,36,Slim Design
+484,Vivo V40,Vivo,4GB,128GB,5287mAh,74MP + 15MP,"6.8"" AMOLED",Tensor G4,314021,47,AI Enabled
+485,Pova 6 Pro,Tecno,8GB,64GB,5477mAh,145MP + 17MP,"6.5"" LCD",Dimensity 9300,191514,43,Face ID
+486,OnePlus Nord CE 4 Lite,OnePlus,4GB,256GB,4697mAh,89MP + 21MP,"6.7"" AMOLED",Dimensity 9300,90313,21,AI Enabled
+487,iPhone 14 Max,Apple,16GB,512GB,4434mAh,163MP + 36MP,"6.8"" AMOLED",Snapdragon 8 Gen 3,332531,88,AI Enabled
+488,Galaxy A55 Neo,Samsung,6GB,512GB,4655mAh,186MP + 28MP,"6.5"" LCD",Snapdragon 8 Gen 2,143748,24,Gaming Mode
+489,Vivo Y200e Neo,Vivo,6GB,1TB,4126mAh,119MP + 34MP,"6.7"" AMOLED",Snapdragon 8 Gen 3,45988,51,AI Enabled
+490,Vivo Y58 Lite,Vivo,8GB,256GB,4844mAh,115MP + 42MP,"6.7"" AMOLED",A18 Pro,198079,52,AI Enabled
+491,Pixel Fold Max,Google,6GB,512GB,5931mAh,120MP + 36MP,"6.5"" LCD",Helio G99,255623,36,Gaming Mode
+492,Oppo Find X7 Ultra Max,Oppo,12GB,64GB,4401mAh,172MP + 43MP,"6.7"" AMOLED",Snapdragon 8 Gen 3,124441,69,Gaming Mode
+493,Pixel 7 Lite,Google,12GB,512GB,4044mAh,68MP + 43MP,"6.5"" LCD",Snapdragon 8 Gen 2,283471,59,Gaming Mode
+494,Phantom V Fold 2 Lite,Tecno,6GB,64GB,4992mAh,139MP + 20MP,"6.1"" OLED",Snapdragon 8 Gen 2,55535,50,Slim Design
+495,Pova 6 Pro Lite,Tecno,8GB,64GB,5357mAh,88MP + 30MP,"6.7"" AMOLED",Snapdragon 8 Gen 3,260613,80,AI Enabled
+496,Galaxy Z Flip 6,Samsung,6GB,64GB,4196mAh,94MP + 37MP,"6.1"" OLED",Dimensity 9300,290639,72,Face ID
+497,Poco X6 Pro Neo,Xiaomi,16GB,64GB,5611mAh,109MP + 32MP,"6.5"" LCD",Snapdragon 8 Gen 3,294931,79,Face ID
+498,Pixel 8a Lite,Google,8GB,64GB,4661mAh,163MP + 43MP,"6.5"" LCD",Exynos 2400,41944,23,Fast Charging
+499,Realme 12 Pro+ Max,Realme,8GB,64GB,5335mAh,187MP + 31MP,"6.7"" AMOLED",Snapdragon 8 Gen 3,121790,100,AI Enabled
+500,Pixel 8a Pro,Google,6GB,256GB,4855mAh,67MP + 46MP,"6.5"" LCD",Snapdragon 8 Gen 3,190803,40,AI Enabled
+501,Vivo V30 Pro,Vivo,8GB,128GB,5316mAh,159MP + 44MP,"6.5"" LCD",Helio G99,146903,60,Face ID
+502,iPhone 16 Plus Pro,Apple,16GB,512GB,5977mAh,59MP + 49MP,"6.7"" AMOLED",Helio G99,265951,75,Fast Charging
+503,Poco X6 Pro Max,Xiaomi,6GB,512GB,5001mAh,54MP + 36MP,"6.7"" AMOLED",Snapdragon 8 Gen 3,316427,47,AI Enabled
+504,Realme 13 Pro Max,Realme,8GB,512GB,5403mAh,128MP + 35MP,"6.7"" AMOLED",Snapdragon 8 Gen 3,209510,63,AI Enabled
+505,OnePlus 12 Max,OnePlus,4GB,1TB,4428mAh,67MP + 40MP,"6.7"" AMOLED",Helio G99,179658,91,Gaming Mode
+506,Pixel Fold Max,Google,6GB,1TB,4247mAh,133MP + 16MP,"6.1"" OLED",Dimensity 9300,97277,86,Slim Design
+507,Pixel 7 Max,Google,4GB,256GB,5648mAh,171MP + 19MP,"6.8"" AMOLED",A18 Pro,322458,35,Fast Charging
+508,OnePlus 11 Edition,OnePlus,8GB,1TB,5686mAh,62MP + 49MP,"6.5"" LCD",Helio G99,40496,24,AI Enabled
+509,iPhone 16 Neo,Apple,8GB,64GB,5579mAh,77MP + 25MP,"6.1"" OLED",Snapdragon 8 Gen 2,144029,82,Face ID
+510,Poco F6 Lite,Xiaomi,8GB,512GB,4659mAh,161MP + 9MP,"6.7"" AMOLED",Tensor G4,347213,50,Slim Design
+511,Vivo Y200e Lite,Vivo,4GB,128GB,4764mAh,152MP + 9MP,"6.1"" OLED",Tensor G4,245302,79,Gaming Mode
+512,OnePlus 11 Neo,OnePlus,4GB,128GB,5485mAh,129MP + 13MP,"6.5"" LCD",Snapdragon 8 Gen 2,266153,86,AI Enabled
+513,Vivo V30 Pro Lite,Vivo,16GB,512GB,4801mAh,188MP + 10MP,"6.7"" AMOLED",Exynos 2400,251642,75,Face ID
+514,Realme C67 Pro,Realme,8GB,512GB,4123mAh,82MP + 39MP,"6.5"" LCD",Dimensity 9300,82164,39,Fast Charging
+515,Realme GT 6 Max,Realme,6GB,1TB,5978mAh,200MP + 37MP,"6.1"" OLED",Tensor G4,50815,10,Fast Charging
+516,iPhone 15 Pro,Apple,12GB,512GB,4981mAh,91MP + 12MP,"6.5"" LCD",Dimensity 9300,324968,52,Gaming Mode
+517,Xiaomi 13T Pro Edition,Xiaomi,12GB,64GB,5608mAh,111MP + 17MP,"6.8"" AMOLED",Dimensity 9300,125154,37,Fast Charging
+518,Realme 13 Pro Pro,Realme,8GB,64GB,5877mAh,86MP + 17MP,"6.8"" AMOLED",Tensor G4,300884,20,Gaming Mode
+519,Hot 40,Infinix,6GB,1TB,5979mAh,54MP + 16MP,"6.8"" AMOLED",Helio G99,318735,7,AI Enabled
+520,Galaxy S24 Max,Samsung,16GB,1TB,4647mAh,152MP + 10MP,"6.5"" LCD",Dimensity 9300,258595,10,Slim Design
+521,Xiaomi 14 Pro,Xiaomi,12GB,1TB,4519mAh,118MP + 29MP,"6.7"" AMOLED",A18 Pro,61220,52,Face ID
+522,OnePlus Open Neo,OnePlus,6GB,1TB,5470mAh,86MP + 27MP,"6.8"" AMOLED",Helio G99,287629,96,Slim Design
+523,Pixel 8a Neo,Google,6GB,512GB,5097mAh,198MP + 26MP,"6.5"" LCD",Exynos 2400,126105,89,Slim Design
+524,iPhone 15 Pro Lite,Apple,16GB,128GB,5189mAh,164MP + 34MP,"6.1"" OLED",Helio G99,63319,57,AI Enabled
+525,Xiaomi 13T Pro Max,Xiaomi,12GB,64GB,5960mAh,179MP + 39MP,"6.5"" LCD",Snapdragon 8 Gen 3,46949,34,Gaming Mode
+526,Smart 8 Pro Edition,Infinix,12GB,64GB,4814mAh,170MP + 32MP,"6.5"" LCD",Dimensity 9300,170141,94,Fast Charging
+527,GT 20 Pro,Infinix,4GB,64GB,4382mAh,79MP + 46MP,"6.7"" AMOLED",Snapdragon 8 Gen 3,106336,99,Face ID
+528,Note 40 Pro Neo,Infinix,6GB,128GB,5574mAh,62MP + 40MP,"6.8"" AMOLED",Exynos 2400,240807,55,AI Enabled
+529,Zero 30 Neo,Infinix,6GB,128GB,4511mAh,162MP + 19MP,"6.8"" AMOLED",Tensor G4,130747,74,Slim Design
+530,Vivo Y58 Lite,Vivo,4GB,1TB,5512mAh,68MP + 8MP,"6.1"" OLED",Snapdragon 8 Gen 2,281354,85,Slim Design
+531,Vivo Y58,Vivo,16GB,256GB,4668mAh,78MP + 26MP,"6.7"" AMOLED",Snapdragon 8 Gen 2,109531,18,Slim Design
+532,iPhone SE 4 Pro,Apple,16GB,64GB,5433mAh,97MP + 50MP,"6.7"" AMOLED",A18 Pro,293094,100,AI Enabled
+533,GT 20 Pro,Infinix,8GB,1TB,5141mAh,143MP + 12MP,"6.1"" OLED",Exynos 2400,222099,10,Slim Design
+534,Note 40 Pro Max,Infinix,8GB,64GB,5359mAh,100MP + 24MP,"6.7"" AMOLED",Exynos 2400,111297,64,Face ID
+535,Oppo Reno 12 Pro,Oppo,16GB,256GB,5031mAh,116MP + 41MP,"6.5"" LCD",Snapdragon 8 Gen 2,101180,11,Gaming Mode
+536,OnePlus 12R Edition,OnePlus,12GB,256GB,4995mAh,141MP + 27MP,"6.5"" LCD",Tensor G4,302517,67,Fast Charging
+537,Oppo A3 Pro Edition,Oppo,12GB,1TB,5572mAh,133MP + 9MP,"6.1"" OLED",Exynos 2400,210146,33,Slim Design
+538,Oppo A78 Lite,Oppo,16GB,128GB,5676mAh,145MP + 9MP,"6.8"" AMOLED",Snapdragon 8 Gen 3,284860,47,Fast Charging
+539,Vivo Y58 Neo,Vivo,4GB,128GB,5245mAh,68MP + 15MP,"6.5"" LCD",A18 Pro,63869,11,Fast Charging
+540,iPhone 16 Plus Edition,Apple,6GB,256GB,5631mAh,91MP + 13MP,"6.5"" LCD",Dimensity 9300,92163,88,Slim Design
+541,Vivo Y58 Max,Vivo,4GB,512GB,4502mAh,124MP + 34MP,"6.5"" LCD",Dimensity 9300,47202,8,AI Enabled
+542,Realme C67,Realme,16GB,256GB,5417mAh,182MP + 42MP,"6.1"" OLED",Exynos 2400,229782,36,Fast Charging
+543,Pixel 8a Edition,Google,4GB,64GB,4210mAh,98MP + 46MP,"6.5"" LCD",Exynos 2400,185428,83,Gaming Mode
+544,iPhone 16 Max,Apple,8GB,1TB,4904mAh,185MP + 29MP,"6.1"" OLED",Snapdragon 8 Gen 2,69538,58,Face ID
+545,OnePlus 11 Pro,OnePlus,12GB,128GB,5297mAh,106MP + 9MP,"6.1"" OLED",A18 Pro,179782,77,Fast Charging
+546,Vivo Y58 Pro,Vivo,16GB,256GB,4482mAh,183MP + 33MP,"6.5"" LCD",Tensor G4,314379,8,Slim Design
+547,Realme 13 Pro Pro,Realme,16GB,256GB,5469mAh,181MP + 10MP,"6.8"" AMOLED",Tensor G4,278668,84,Slim Design
+548,Poco F6 Lite,Xiaomi,8GB,64GB,5003mAh,141MP + 18MP,"6.7"" AMOLED",Snapdragon 8 Gen 3,260956,46,Slim Design
+549,Pixel 7a,Google,16GB,1TB,4762mAh,82MP + 16MP,"6.5"" LCD",Dimensity 9300,333080,35,AI Enabled
+550,Note 30 VIP Edition,Infinix,6GB,1TB,4725mAh,199MP + 32MP,"6.8"" AMOLED",Helio G99,195286,86,AI Enabled
+551,Pixel 8 Pro Lite,Google,8GB,512GB,5530mAh,196MP + 29MP,"6.7"" AMOLED",Helio G99,278381,76,Face ID
+552,Spark 10 Pro Neo,Tecno,16GB,1TB,5782mAh,162MP + 13MP,"6.8"" AMOLED",Helio G99,339444,76,Slim Design
+553,Vivo V30 Pro,Vivo,8GB,1TB,5688mAh,65MP + 46MP,"6.5"" LCD",Snapdragon 8 Gen 2,106732,94,Gaming Mode
+554,Hot 40 Neo,Infinix,12GB,512GB,4767mAh,99MP + 8MP,"6.8"" AMOLED",Snapdragon 8 Gen 3,339583,39,Fast Charging
+555,Realme C67 Lite,Realme,4GB,1TB,4843mAh,183MP + 48MP,"6.8"" AMOLED",Helio G99,64227,13,Face ID
+556,Vivo T3,Vivo,16GB,1TB,4797mAh,84MP + 11MP,"6.8"" AMOLED",Snapdragon 8 Gen 2,343164,77,Gaming Mode
+557,Xiaomi 14 Ultra Lite,Xiaomi,16GB,512GB,5587mAh,97MP + 19MP,"6.8"" AMOLED",Snapdragon 8 Gen 2,274659,44,Fast Charging
+558,iPhone 13 Mini Pro,Apple,4GB,64GB,5948mAh,91MP + 17MP,"6.1"" OLED",Helio G99,167459,84,Gaming Mode
+559,iPhone 16 Lite,Apple,8GB,128GB,4884mAh,122MP + 18MP,"6.5"" LCD",Dimensity 9300,259050,61,Gaming Mode
+560,Vivo X100 Pro,Vivo,12GB,256GB,4709mAh,200MP + 35MP,"6.7"" AMOLED",Tensor G4,251106,21,Fast Charging
+561,Smart 8 Pro,Infinix,6GB,512GB,4347mAh,77MP + 42MP,"6.1"" OLED",Tensor G4,311375,26,Gaming Mode
+562,Galaxy A35,Samsung,16GB,64GB,4964mAh,151MP + 36MP,"6.7"" AMOLED",Exynos 2400,172186,14,Slim Design
+563,Vivo Y200e,Vivo,12GB,128GB,4459mAh,172MP + 42MP,"6.8"" AMOLED",Tensor G4,210262,34,Fast Charging
+564,Vivo X100 Pro Neo,Vivo,12GB,256GB,4395mAh,100MP + 43MP,"6.5"" LCD",Exynos 2400,160526,67,Slim Design
+565,Oppo F27 Pro+ Neo,Oppo,6GB,256GB,5472mAh,53MP + 39MP,"6.5"" LCD",Dimensity 9300,262595,17,Fast Charging
+566,Vivo Y58 Neo,Vivo,6GB,128GB,4908mAh,118MP + 25MP,"6.8"" AMOLED",Exynos 2400,304573,55,Face ID
+567,Pova 6 Pro Max,Tecno,4GB,128GB,5511mAh,54MP + 36MP,"6.8"" AMOLED",Exynos 2400,271469,45,Face ID
+568,iPhone SE 4 Pro,Apple,12GB,1TB,4248mAh,166MP + 30MP,"6.8"" AMOLED",Helio G99,220529,49,Face ID
+569,Realme P1 Pro Neo,Realme,4GB,256GB,4842mAh,135MP + 43MP,"6.1"" OLED",Dimensity 9300,95695,66,Fast Charging
+570,Galaxy M34 Max,Samsung,16GB,128GB,4898mAh,94MP + 31MP,"6.5"" LCD",Snapdragon 8 Gen 2,121221,32,Face ID
+571,Poco F6 Max,Xiaomi,8GB,512GB,5800mAh,102MP + 11MP,"6.1"" OLED",Helio G99,277362,48,Gaming Mode
+572,Camon 30 Premier,Tecno,12GB,256GB,5542mAh,181MP + 25MP,"6.8"" AMOLED",Exynos 2400,226047,45,Face ID
+573,Spark 20 Pro Pro,Tecno,6GB,1TB,4512mAh,108MP + 25MP,"6.7"" AMOLED",Dimensity 9300,63567,50,Gaming Mode
+574,Pop 8 Edition,Tecno,12GB,1TB,5998mAh,84MP + 42MP,"6.1"" OLED",A18 Pro,287405,20,Slim Design
+575,OnePlus Nord CE 4,OnePlus,16GB,512GB,5860mAh,66MP + 34MP,"6.8"" AMOLED",Dimensity 9300,232946,18,Face ID
+576,iPhone SE 4,Apple,8GB,128GB,4430mAh,152MP + 40MP,"6.1"" OLED",Snapdragon 8 Gen 3,217228,52,AI Enabled
+577,iPhone 16 Pro Lite,Apple,6GB,512GB,5267mAh,181MP + 9MP,"6.1"" OLED",Exynos 2400,144443,92,Fast Charging
+578,Pixel 7 Pro,Google,12GB,512GB,5659mAh,107MP + 22MP,"6.8"" AMOLED",Snapdragon 8 Gen 3,70454,16,Slim Design
+579,Camon 30 Premier,Tecno,12GB,1TB,4505mAh,140MP + 37MP,"6.7"" AMOLED",Tensor G4,158622,32,Gaming Mode
+580,Vivo X100 Pro Neo,Vivo,12GB,256GB,5339mAh,124MP + 23MP,"6.1"" OLED",Snapdragon 8 Gen 2,276413,55,Face ID
+581,Vivo X100 Pro Max,Vivo,16GB,64GB,5750mAh,62MP + 14MP,"6.1"" OLED",Snapdragon 8 Gen 3,53996,30,AI Enabled
+582,Oppo F27 Pro+ Lite,Oppo,6GB,512GB,5706mAh,67MP + 44MP,"6.5"" LCD",A18 Pro,156268,11,Gaming Mode
+583,Oppo F27 Pro+ Edition,Oppo,16GB,256GB,4929mAh,137MP + 24MP,"6.1"" OLED",Snapdragon 8 Gen 3,330847,49,Face ID
+584,OnePlus Nord CE 4 Max,OnePlus,12GB,512GB,5689mAh,144MP + 39MP,"6.5"" LCD",Snapdragon 8 Gen 2,268645,76,AI Enabled
+585,Smart 8 Pro Max,Infinix,4GB,256GB,5429mAh,100MP + 8MP,"6.1"" OLED",Tensor G4,172718,62,Face ID

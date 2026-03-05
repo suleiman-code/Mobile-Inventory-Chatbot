@@ -9,6 +9,7 @@ from langchain_community.document_loaders.csv_loader import CSVLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_openai import OpenAIEmbeddings
 from langchain_community.vectorstores import FAISS
+from langchain_core.documents import Document
 
 # Configuration
 MODEL_NAME = "gpt-3.5-turbo"
@@ -17,31 +18,147 @@ CSV_FILE = "MobileInventory.csv"
 # Initialize OpenAI Client (Base OpenAI used for Final Chat completion)
 api_key = os.getenv("OPENAI_API_KEY")
 if not api_key:
-    if "OPENAI_API_KEY" in st.secrets:
-        api_key = st.secrets["OPENAI_API_KEY"]
-    else:
+    try:
+        api_key = st.secrets.get("OPENAI_API_KEY")
+        if not api_key:
+            raise ValueError()
+    except Exception:
         st.error("OPENAI_API_KEY not found. Please set it as an environment variable or in .streamlit/secrets.toml")
         st.stop()
 
 client = OpenAI(api_key=api_key)
 
-st.set_page_config(page_title="SLM Mobile AI - RAG Agent", layout="wide", page_icon="📱")
+st.set_page_config(page_title="SLM Mobile AI", layout="wide", page_icon="https://img.icons8.com/ios-filled/50/4a90e2/iphone-x.png")
 
-# Custom Premium Styling
+# Custom Premium Styling - ChatGPT Style
 st.markdown("""
     <style>
-    :root {
-        --bg-color: #ffffff;
-        --sidebar-bg: #f8f9fa;
-        --text-main: #1a1a1a;
-        --accent-blue: #00d2ff;
-        --border-color: #e0e0e0;
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+    
+    html, body, [class*="css"] {
+        font-family: 'Inter', sans-serif !important;
     }
-    .main { background-color: var(--bg-color); color: var(--text-main); }
-    [data-testid="stSidebar"] { background-color: var(--sidebar-bg); border-right: 1px solid var(--border-color); }
-    .stChatMessage { border-bottom: 1px solid #f0f0f0 !important; padding: 1.5rem 0 !important; max-width: 800px; margin: 0 auto !important; }
-    .logo-container { display: flex; align-items: center; gap: 12px; margin-bottom: 2rem; padding: 10px; }
-    .logo-text { font-size: 1.4rem; font-weight: 700; color: #1a1a1a; }
+    
+    /* Main Background */
+    .stApp, .main { 
+        background-color: #ffffff; 
+        color: #0d0d0d;
+    }
+    
+    /* Sidebar */
+    [data-testid="stSidebar"] { 
+        background-color: #f9f9f9; 
+        border-right: 1px solid #e5e5e5;
+    }
+    
+    /* Input Area Container */
+    [data-testid="stChatInput"] {
+        border-radius: 24px !important;
+        background-color: #f4f4f4 !important;
+        border: 1px solid #e5e5e5 !important;
+        padding: 4px 6px !important;
+        box-shadow: none !important;
+        transition: border-color 0.2s ease !important;
+    }
+    
+    [data-testid="stChatInput"]:focus-within {
+        background-color: #f4f4f4 !important;
+        border: 1px solid #b4b4b4 !important;
+        box-shadow: none !important;
+    }
+    
+    /* Remove red inner border on focus */
+    [data-testid="stChatInput"] > div {
+        border: none !important;
+        box-shadow: none !important;
+        background-color: transparent !important;
+    }
+    
+    /* Input send button - default light state when empty */
+    [data-testid="stChatInput"] button {
+        background-color: #e5e5e5 !important;
+        border-radius: 50% !important;
+        width: 36px !important;
+        height: 36px !important;
+        padding: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        transition: all 0.2s ease-in-out !important;
+        border: none !important;
+        outline: none !important;
+        box-shadow: none !important;
+    }
+    
+    [data-testid="stChatInput"] button:focus,
+    [data-testid="stChatInput"] button:active {
+        border: none !important;
+        outline: none !important;
+        box-shadow: none !important;
+    }
+
+    [data-testid="stChatInput"] button * {
+        background-color: transparent !important;
+    }
+    /* Arrow color default (light) */
+    [data-testid="stChatInput"] button svg {
+        fill: #ffffff !important;
+        color: #ffffff !important;
+        width: 18px !important;
+        height: 18px !important;
+        margin: auto !important;
+        transition: all 0.2s ease-in-out !important;
+    }
+    
+    /* Active State: When there is text, button is enabled */
+    [data-testid="stChatInput"] button:not(:disabled) {
+        background-color: #333333 !important;
+    }
+    
+    /* Hover on active state */
+    [data-testid="stChatInput"] button:not(:disabled):hover {
+        background-color: #000000 !important;
+        transform: scale(1.05); /* Slight enlargement on hover */
+    }
+    
+    /* Chat Messages */
+    .stChatMessage {
+        background-color: transparent !important;
+        border: none !important;
+        padding: 1.5rem 0 !important;
+        max-width: 48rem; /* 768px */
+        margin: 0 auto !important;
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+    
+    /* Avatars override - completely hide all default Streamlit avatar instances */
+    [data-testid="chatAvatarIcon-user"], [data-testid="chatAvatarIcon-assistant"] { display: none !important; }
+    [data-testid="stChatMessageAvatarUser"], [data-testid="stChatMessageAvatarAssistant"] { display: none !important; }
+    .stChatMessage [data-testid="stIcon"] { display: none !important; }
+    div[data-testid="stImage"] { display: none !important; }
+    
+    .user-container { width: 100%; display: flex; justify-content: flex-end; }
+    .user-bubble {
+        background-color: #f0f4f9; 
+        color: #1f1f1f; 
+        padding: 12px 20px; 
+        border-radius: 20px; 
+        max-width: 85%;
+        text-align: left;
+    }
+    
+    .bot-container { display: flex; align-items: flex-start; width: 100%; }
+    .bot-sparkle { margin-right: 15px; margin-top: 4px; flex-shrink: 0; }
+    .bot-content { flex-grow: 1; color: #1f1f1f; padding-top: 2px; }
+    
+    .logo-container { display: flex; align-items: center; gap: 12px; margin-bottom: 2rem; padding: 0px 10px; }
+    .logo-text { font-size: 1.1rem; font-weight: 600; color: #333; }
+    
+    /* Hide top padding */
+    .block-container {
+        padding-top: 2rem !important;
+    }
     </style>
 """, unsafe_allow_html=True)
 
@@ -49,13 +166,17 @@ st.markdown("""
 @st.cache_resource
 def initialize_rag():
     try:
-        # 1. Document Loader
-        loader = CSVLoader(file_path=CSV_FILE, encoding='utf-8')
-        documents = loader.load()
-
-        # 2. Chunking (Each row is a chunk for structured data)
-        text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=0)
-        chunks = text_splitter.split_documents(documents)
+        # 1 & 2. Improved Data Chunking Strategy for Tabular Data
+        import pandas as pd
+        df = pd.read_csv(CSV_FILE)
+        chunks = []
+        for index, row in df.iterrows():
+            # Convert row to an informative paragraph
+            content = f"Model: {row.get('Model', 'N/A')}, Brand: {row.get('Brand', 'N/A')}. "
+            specs = [f"{col}: {row[col]}" for col in df.columns if col not in ['Model', 'Brand'] and pd.notna(row.get(col))]
+            content += ", ".join(specs)
+            doc = Document(page_content=content, metadata={"source": f"row_{index}"})
+            chunks.append(doc)
 
         # 3. Embeddings
         embeddings = OpenAIEmbeddings(openai_api_key=api_key)
@@ -112,6 +233,26 @@ def get_relevant_context(query):
         return reranked_docs
     return "No inventory data found."
 
+def rewrite_query(user_query, chat_history):
+    """Rewrite query to include context from chat history."""
+    if len(chat_history) <= 2:
+        return user_query
+    # Get last 6 messages
+    recent_history = [msg for msg in chat_history[-6:] if msg['role'] != 'system']
+    history_text = "\n".join([f"{msg['role']}: {msg['content']}" for msg in recent_history])
+    
+    prompt = f"Given the conversation history and the latest user query, rewrite the user query to be a standalone search query containing all necessary context (e.g., brand, model mentioned previously) so it can be used to search an inventory database. DO NOT answer it, just rewrite.\n\nHistory:\n{history_text}\n\nLatest Query: {user_query}\n\nStandalone Query:"
+    
+    try:
+        res = client.chat.completions.create(
+            model="gpt-3.5-turbo",
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0
+        )
+        return res.choices[0].message.content.strip()
+    except Exception:
+        return user_query
+
 # --- DATA FOR DASHBOARD ---
 def load_data():
     if os.path.exists(CSV_FILE):
@@ -123,7 +264,9 @@ df = load_data()
 with st.sidebar:
     st.markdown("""
         <div class="logo-container">
-            <img src="https://img.icons8.com/ios-filled/50/4a90e2/iphone-x.png" width="35">
+            <div style="background-color: white; border: 1px solid #e5e5e5; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <img src="https://img.icons8.com/ios-filled/50/4a90e2/iphone-x.png" width="20">
+            </div>
             <span class="logo-text">SLM Mobile AI</span>
         </div>
     """, unsafe_allow_html=True)
@@ -144,29 +287,38 @@ with st.sidebar:
 
 # Chat initialization
 if "messages" not in st.session_state:
-    st.session_state["messages"] = [{"role": "assistant", "content": "Hello! I'm your SLM Mobile expert. How can I help you find the perfect device today?"}]
+    st.session_state["messages"] = []
 
-# Header
-st.markdown("""
-    <div style="text-align: center; padding: 20px 0 40px 0;">
-        <h1 style="font-size: 3rem; font-weight: 800; color: #1a1a1a; margin-bottom: 5px;">
-            📱 SLM <span style="color: #00d2ff;">Mobile</span> Expert
-        </h1>
-        <p style="color: #666; font-size: 1.1rem; letter-spacing: 1px;">PREMIUM ASSISTANCE</p>
-    </div>
-""", unsafe_allow_html=True)
+# Header (Only show if no messages)
+if len(st.session_state["messages"]) == 0:
+    st.markdown("""
+        <div style="text-align: center; padding: 15vh 0 5vh 0;">
+            <div style="background-color: white; border: 1px solid #e5e5e5; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px auto; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                <img src="https://img.icons8.com/ios-filled/50/4a90e2/iphone-x.png" width="35">
+            </div>
+            <h1 style="font-size: 2rem; font-weight: 600; color: #0d0d0d; margin-bottom: 10px;">
+                How can I help you today?
+            </h1>
+            <p style="color: #666; font-size: 1rem;">Ask me anything about our premium mobile inventory.</p>
+        </div>
+    """, unsafe_allow_html=True)
 
 chat_container = st.container()
 
+bot_icon = '''<img class="bot-sparkle" src="https://img.icons8.com/ios-filled/50/4a90e2/iphone-x.png" width="24" height="24">'''
+
 with chat_container:
     for msg in st.session_state["messages"]:
-        with st.chat_message(msg["role"]):
-            st.markdown(msg["content"])
+        with st.chat_message(msg["role"], avatar=None):
+            if msg["role"] == "user":
+                st.markdown(f'<div class="user-container"><div class="user-bubble">{msg["content"]}</div></div>', unsafe_allow_html=True)
+            else:
+                st.markdown(f'<div class="bot-container">{bot_icon}<div class="bot-content">{msg["content"]}</div></div>', unsafe_allow_html=True)
 
 if prompt := st.chat_input("Message SLM Mobile AI..."):
     st.session_state["messages"].append({"role": "user", "content": prompt})
-    with st.chat_message("user"):
-        st.markdown(prompt)
+    with st.chat_message("user", avatar=None):
+        st.markdown(f'<div class="user-container"><div class="user-bubble">{prompt}</div></div>', unsafe_allow_html=True)
 
     # 1. Global Awareness (To handle general questions like 'what brands do you have?')
     all_brands = sorted(df['Brand'].unique().tolist()) if df is not None else []
@@ -174,8 +326,11 @@ if prompt := st.chat_input("Message SLM Mobile AI..."):
     global_inventory_summary = f"Total Unique Models: {total_inventory}. Brands in Stock: {', '.join(all_brands)}."
 
     # 2. Internal RAG Logic (Hidden from user)
-    initial_docs = vector_db.similarity_search(prompt, k=20) if vector_db else []
-    context_data = rerank_context(prompt, initial_docs) if initial_docs else "No specific context found."
+    # Context Memory: Rewrite the query based on history
+    standalone_query = rewrite_query(prompt, st.session_state["messages"])
+    
+    initial_docs = vector_db.similarity_search(standalone_query, k=20) if vector_db else []
+    context_data = rerank_context(standalone_query, initial_docs) if initial_docs else "No specific context found."
 
     # 3. Construct Professional Prompt
     system_prompt = f"""You are SLM Mobile AI, a highly sophisticated and professional mobile expert assistant.
@@ -196,7 +351,7 @@ if prompt := st.chat_input("Message SLM Mobile AI..."):
     """
 
     # 4. Call Model with a clean loading state
-    with st.chat_message("assistant"):
+    with st.chat_message("assistant", avatar=None):
         response_placeholder = st.empty()
         full_response = ""
         
@@ -207,12 +362,23 @@ if prompt := st.chat_input("Message SLM Mobile AI..."):
                 response = client.chat.completions.create(
                     model=MODEL_NAME,
                     messages=messages_payload,
-                    stream=False,
+                    stream=True,
                 )
-                full_response = response.choices[0].message.content
-                
-            response_placeholder.markdown(full_response)
+                for chunk in response:
+                    content = chunk.choices[0].delta.content
+                    if content:
+                        full_response += content
+                        
+                        # Re-render with bot icon
+                        display_html = f'<div class="bot-container">{bot_icon}<div class="bot-content">{full_response}▌</div></div>'
+                        response_placeholder.markdown(display_html, unsafe_allow_html=True)
+                        
+            # Final output without blinker
+            display_html = f'<div class="bot-container">{bot_icon}<div class="bot-content">{full_response}</div></div>'
+            response_placeholder.markdown(display_html, unsafe_allow_html=True)
             st.session_state["messages"].append({"role": "assistant", "content": full_response})
 
         except Exception as e:
-            st.error("I encountered a brief connection issue. Please try again.")
+            # Show error with bot style
+            error_html = f'<div class="bot-container">{bot_icon}<div class="bot-content"><div style="background-color: #fdeded; color: #c63a3a; padding: 12px 18px; border-radius: 6px; font-size: 0.95rem;">I encountered a brief connection issue. Please try again.</div></div></div>'
+            response_placeholder.markdown(error_html, unsafe_allow_html=True)
