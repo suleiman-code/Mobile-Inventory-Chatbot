@@ -1,21 +1,24 @@
 # 📱 SLM Mobile Inventory AI
 
-A premium AI-powered inventory management and sales assistant built with Streamlit and OpenAI. This application allows users to interact with a mobile phone inventory of 100+ products using a natural language interface, similar to ChatGPT.
+A premium AI-powered inventory management and sales assistant built with Streamlit and OpenAI. This application allows users to interact with a mobile phone inventory of 500+ products using a natural language interface, similar to ChatGPT and Google Gemini.
 
 ## ✨ Features
 
-- **ChatGPT-like Interface**: Centered chat layout with a sleek, modern professional theme.
-- **Smart Inventory Search**: Advanced search logic that handles specific brand queries and general product searches.
-- **Real-time Metrics**: Sidebar dashboard showing total models, unique brands, and total stock.
-- **Rich Data**: Comprehensive database (`MobileInventory.csv`) containing 100 products from top brands like Apple, Samsung, Google, OnePlus, Xiaomi, Vivo, Oppo, and Realme.
-- **Intelligent Response Protocol**: Automated table generation for comparisons and detailed spec listings with mandatory PKR pricing.
+- **Gemini & ChatGPT-inspired Interface**: Sleek, modern professional theme with centered layouts and premium typography.
+- **Smart RAG Engine**: Retrieval-Augmented Generation using LangChain and FAISS for accurate inventory search.
+- **Context Memory**: Remembers previous conversation turns for a natural, multi-turn chat experience.
+- **Streaming Responses**: Real-time word-by-word response generation (Typewriter effect).
+- **Custom Branding**: Fully customized UI with mobile logos, custom favicons, and branded elements.
+- **Large Inventory**: Comprehensive database (`MobileInventory.csv`) containing 500+ products across 10 top brands.
+- **Professional Presentation**: Automatically generates tables for comparisons and provides pricing in PKR.
 
 ## 🛠️ Tech Stack
 
 - **Frontend**: [Streamlit](https://streamlit.io/)
+- **RAG & AI Logic**: [LangChain](https://www.langchain.com/), [FAISS](https://github.com/facebookresearch/faiss)
 - **AI Engine**: [OpenAI GPT-3.5 Turbo](https://openai.com/)
 - **Data Handling**: [Pandas](https://pandas.pydata.org/)
-- **Styling**: Custom CSS for a premium white-glove experience.
+- **Styling**: Vanilla CSS for premium customizations.
 
 ## 🚀 Getting Started
 
@@ -28,8 +31,8 @@ A premium AI-powered inventory management and sales assistant built with Streaml
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/YOUR_USERNAME/Slm_MobileInventory.git
-   cd Slm_MobileInventory
+   git clone https://github.com/suleiman-code/Mobile-Inventory-Chatbot.git
+   cd Mobile-Inventory-Chatbot
    ```
 
 2. Install dependencies:
@@ -38,7 +41,7 @@ A premium AI-powered inventory management and sales assistant built with Streaml
    ```
 
 3. Set up your OpenAI API Key:
-   Create a `.streamlit/secrets.toml` file or set an environment variable:
+   Create a `.streamlit/secrets.toml` file:
    ```toml
    OPENAI_API_KEY = "your_api_key_here"
    ```
@@ -50,14 +53,10 @@ A premium AI-powered inventory management and sales assistant built with Streaml
 
 ## 📁 Project Structure
 
-- `app1.py`: Main application code with custom styling and AI logic.
-- `MobileInventory.csv`: Database containing 100 mobile phone records.
+- `app1.py`: Main application code with custom styling, RAG logic, and memory management.
+- `MobileInventory.csv`: Database containing 500 mobile phone records.
 - `requirements.txt`: Python dependencies.
 - `.streamlit/`: Streamlit configuration and secrets.
-
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
 
 ---
 Developed by **SLM Mobile World**

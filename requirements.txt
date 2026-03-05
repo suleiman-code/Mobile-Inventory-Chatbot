@@ -1,7 +1,6 @@
 streamlit
 openai
 pandas
-tabulate
 langchain
 langchain-community
 langchain-openai
