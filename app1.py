@@ -3,6 +3,7 @@ import pandas as pd
 from openai import OpenAI
 import os
 import re
+import time
 
 # RAG Imports
 from langchain_community.document_loaders.csv_loader import CSVLoader
@@ -58,13 +59,13 @@ st.markdown("""
         border: 1px solid #e5e5e5 !important;
         padding: 4px 6px !important;
         box-shadow: none !important;
-        transition: border-color 0.2s ease !important;
+        transition: all 0.3s ease !important;
     }
     
     [data-testid="stChatInput"]:focus-within {
         background-color: #f4f4f4 !important;
         border: 1px solid #b4b4b4 !important;
-        box-shadow: none !important;
+        box-shadow: 0 0 0 2px rgba(0,0,0,0.05) !important;
     }
     
     /* Remove red inner border on focus */
@@ -74,7 +75,7 @@ st.markdown("""
         background-color: transparent !important;
     }
     
-    /* Input send button - default light state when empty */
+    /* Input send button */
     [data-testid="stChatInput"] button {
         background-color: #e5e5e5 !important;
         border-radius: 50% !important;
@@ -84,22 +85,11 @@ st.markdown("""
         display: flex !important;
         align-items: center !important;
         justify-content: center !important;
-        transition: all 0.2s ease-in-out !important;
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
         border: none !important;
         outline: none !important;
-        box-shadow: none !important;
     }
     
-    [data-testid="stChatInput"] button:focus,
-    [data-testid="stChatInput"] button:active {
-        border: none !important;
-        outline: none !important;
-        box-shadow: none !important;
-    }
-
-    [data-testid="stChatInput"] button * {
-        background-color: transparent !important;
-    }
     /* Arrow color default (light) */
     [data-testid="stChatInput"] button svg {
         fill: #ffffff !important;
@@ -107,58 +97,122 @@ st.markdown("""
         width: 18px !important;
         height: 18px !important;
         margin: auto !important;
-        transition: all 0.2s ease-in-out !important;
     }
     
-    /* Active State: When there is text, button is enabled */
+    /* Active State: When there is text */
     [data-testid="stChatInput"] button:not(:disabled) {
-        background-color: #333333 !important;
+        background-color: #000000 !important;
     }
     
     /* Hover on active state */
     [data-testid="stChatInput"] button:not(:disabled):hover {
-        background-color: #000000 !important;
-        transform: scale(1.05); /* Slight enlargement on hover */
+        background-color: #333333 !important;
+        transform: scale(1.1);
     }
     
-    /* Chat Messages */
+    /* Chat Messages Animation */
+    @keyframes messageEntry {
+        0% { opacity: 0; transform: translateY(12px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+
     .stChatMessage {
         background-color: transparent !important;
         border: none !important;
-        padding: 1.5rem 0 !important;
-        max-width: 48rem; /* 768px */
+        padding: 1.2rem 0 !important;
+        max-width: 48rem;
         margin: 0 auto !important;
-        font-size: 1rem;
-        line-height: 1.5;
+        animation: messageEntry 0.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
     }
     
-    /* Avatars override - completely hide all default Streamlit avatar instances */
+    /* Avatars override */
     [data-testid="chatAvatarIcon-user"], [data-testid="chatAvatarIcon-assistant"] { display: none !important; }
     [data-testid="stChatMessageAvatarUser"], [data-testid="stChatMessageAvatarAssistant"] { display: none !important; }
-    .stChatMessage [data-testid="stIcon"] { display: none !important; }
-    div[data-testid="stImage"] { display: none !important; }
     
     .user-container { width: 100%; display: flex; justify-content: flex-end; }
     .user-bubble {
-        background-color: #f0f4f9; 
+        background-color: #f3f3f3; 
         color: #1f1f1f; 
-        padding: 12px 20px; 
-        border-radius: 20px; 
-        max-width: 85%;
+        padding: 10px 18px; 
+        border-radius: 18px; 
+        max-width: 80%;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    }
+    
+    .bot-container { display: flex; align-items: flex-start; width: 100%; gap: 16px; }
+    .bot-sparkle { 
+        width: 28px; 
+        height: 28px; 
+        margin-top: 4px; 
+        flex-shrink: 0;
+        transition: transform 0.3s ease;
+    }
+    .bot-container:hover .bot-sparkle {
+        transform: scale(1.1);
+    }
+    
+    .bot-content { 
+        flex-grow: 1; 
+        color: #131313; 
+        padding-top: 4px; 
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+    
+    /* Typing Cursor */
+    .cursor {
+        display: inline-block;
+        width: 2px;
+        height: 1.1em;
+        background-color: #4a90e2;
+        margin-left: 2px;
+        vertical-align: middle;
+        animation: blink 0.8s infinite;
+    }
+    
+    @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
+    }
+
+    /* Pulse for Thinking State */
+    .pulse {
+        animation: pulse 1.5s infinite ease-in-out;
+    }
+    @keyframes pulse {
+        0% { opacity: 0.4; }
+        50% { opacity: 1; }
+        100% { opacity: 0.4; }
+    }
+
+    .logo-container { display: flex; align-items: center; gap: 12px; margin-bottom: 2rem; padding: 0 10px; }
+    .logo-text { font-size: 1.1rem; font-weight: 600; color: #1a1a1a; letter-spacing: -0.01em; }
+    
+    .block-container { padding-top: 3rem !important; }
+
+    /* Tables Improvement */
+    table {
+        border-collapse: collapse;
+        margin: 15px 0;
+        width: 100%;
+        border-radius: 8px;
+        overflow: hidden;
+        border: 1px solid #eee;
+    }
+    th {
+        background-color: #f8f9fa;
         text-align: left;
+        padding: 12px;
+        font-weight: 600;
+        border-bottom: 2px solid #eee;
     }
-    
-    .bot-container { display: flex; align-items: flex-start; width: 100%; }
-    .bot-sparkle { margin-right: 15px; margin-top: 4px; flex-shrink: 0; }
-    .bot-content { flex-grow: 1; color: #1f1f1f; padding-top: 2px; }
-    
-    .logo-container { display: flex; align-items: center; gap: 12px; margin-bottom: 2rem; padding: 0px 10px; }
-    .logo-text { font-size: 1.1rem; font-weight: 600; color: #333; }
-    
-    /* Hide top padding */
-    .block-container {
-        padding-top: 2rem !important;
+    td {
+        padding: 10px 12px;
+        border-bottom: 1px solid #eee;
     }
+    tr:last-child td { border-bottom: none; }
     </style>
 """, unsafe_allow_html=True)
 
@@ -289,8 +343,11 @@ with st.sidebar:
 if "messages" not in st.session_state:
     st.session_state["messages"] = []
 
-# Header (Only show if no messages)
-if len(st.session_state["messages"]) == 0:
+# 1. Capture prompt at the top to control UI state
+prompt = st.chat_input("Message SLM Mobile AI...")
+
+# 2. Header (Only show if no messages AND no prompt just entered)
+if len(st.session_state["messages"]) == 0 and not prompt:
     st.markdown("""
         <div style="text-align: center; padding: 15vh 0 5vh 0;">
             <div style="background-color: white; border: 1px solid #e5e5e5; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px auto; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
@@ -304,7 +361,6 @@ if len(st.session_state["messages"]) == 0:
     """, unsafe_allow_html=True)
 
 chat_container = st.container()
-
 bot_icon = '''<img class="bot-sparkle" src="https://img.icons8.com/ios-filled/50/4a90e2/iphone-x.png" width="24" height="24">'''
 
 with chat_container:
@@ -315,70 +371,79 @@ with chat_container:
             else:
                 st.markdown(f'<div class="bot-container">{bot_icon}<div class="bot-content">{msg["content"]}</div></div>', unsafe_allow_html=True)
 
-if prompt := st.chat_input("Message SLM Mobile AI..."):
+# 3. Handle new prompt
+if prompt:
     st.session_state["messages"].append({"role": "user", "content": prompt})
     with st.chat_message("user", avatar=None):
         st.markdown(f'<div class="user-container"><div class="user-bubble">{prompt}</div></div>', unsafe_allow_html=True)
 
-    # 1. Global Awareness (To handle general questions like 'what brands do you have?')
-    all_brands = sorted(df['Brand'].unique().tolist()) if df is not None else []
-    total_inventory = len(df) if df is not None else 0
-    global_inventory_summary = f"Total Unique Models: {total_inventory}. Brands in Stock: {', '.join(all_brands)}."
-
-    # 2. Internal RAG Logic (Hidden from user)
-    # Context Memory: Rewrite the query based on history
-    standalone_query = rewrite_query(prompt, st.session_state["messages"])
-    
-    initial_docs = vector_db.similarity_search(standalone_query, k=20) if vector_db else []
-    context_data = rerank_context(standalone_query, initial_docs) if initial_docs else "No specific context found."
-
-    # 3. Construct Professional Prompt
-    system_prompt = f"""You are SLM Mobile AI, a highly sophisticated and professional mobile expert assistant.
-    
-    **GLOBAL KNOWLEDGE:**
-    {global_inventory_summary}
-    
-    **SPECIFIC INVENTORY DATA (FOR RELEVANT QUERIES):**
-    {context_data}
-    
-    **INSTRUCTIONS:**
-    1. **Conversational Excellence**: Respond naturally. If asked about brands or general stock, use the GLOBAL KNOWLEDGE. If asked about specific models or specs, use the SPECIFIC INVENTORY DATA.
-    2. **Accuracy**: Do not mention technical terms like "RAG," "Vector DB," or "retrieved data." 
-    3. **Presentation**: Use bold text for model names. Use structured tables for comparing 3 or more devices.
-    4. **Pricing**: Always mention prices in PKR.
-    5. **Integrity**: If a user asks for something we don't carry, check the GLOBAL KNOWLEDGE brands and suggest the best alternative from those brands using the SEARCH DATA.
-    6. **Tone**: Helpful, elite, and precise. Like a premium concierge.
-    """
-
-    # 4. Call Model with a clean loading state
     with st.chat_message("assistant", avatar=None):
         response_placeholder = st.empty()
+        # Custom thinking state for a smoother transition
+        response_placeholder.markdown(f'<div class="bot-container"><img class="bot-sparkle pulse" src="https://img.icons8.com/ios-filled/50/4a90e2/iphone-x.png" width="24" height="24"><div class="bot-content pulse">Thinking...</div></div>', unsafe_allow_html=True)
+        
         full_response = ""
         
         try:
-            messages_payload = [{'role': 'system', 'content': system_prompt}] + st.session_state["messages"]
+            # Global Awareness
+            all_brands = sorted(df['Brand'].unique().tolist()) if df is not None else []
+            total_inventory = len(df) if df is not None else 0
+            global_inventory_summary = f"Total Unique Models: {total_inventory}. Brands in Stock: {', '.join(all_brands)}."
+
+            # RAG Logic
+            standalone_query = rewrite_query(prompt, st.session_state["messages"])
+            initial_docs = vector_db.similarity_search(standalone_query, k=20) if vector_db else []
+            context_data = rerank_context(standalone_query, initial_docs) if initial_docs else "No specific context found."
+
+            # Construct Prompt
+            is_first_message = len(st.session_state["messages"]) == 1
+            first_msg_guidance = ""
+            if is_first_message:
+                brands_to_show = all_brands if len(all_brands) <= 15 else all_brands[:15]
+                first_msg_guidance = f"IMPORTANT: This is the user's FIRST message. Start with a warm greeting and briefly list the available brands ({', '.join(brands_to_show)}...) to guide their inquiry."
+
+            system_prompt = f"""You are SLM Mobile AI, a highly sophisticated and professional mobile expert assistant.
             
-            with st.spinner(" "): 
-                response = client.chat.completions.create(
-                    model=MODEL_NAME,
-                    messages=messages_payload,
-                    stream=True,
-                )
-                for chunk in response:
-                    content = chunk.choices[0].delta.content
-                    if content:
-                        full_response += content
-                        
-                        # Re-render with bot icon
-                        display_html = f'<div class="bot-container">{bot_icon}<div class="bot-content">{full_response}▌</div></div>'
+            {first_msg_guidance}
+
+            **GLOBAL KNOWLEDGE:**
+            {global_inventory_summary}
+            
+            **SPECIFIC INVENTORY DATA (FOR RELEVANT QUERIES):**
+            {context_data}
+            
+            **INSTRUCTIONS:**
+            1. **Conversational Excellence**: Respond naturally. If asked about brands or general stock, use the GLOBAL KNOWLEDGE. If asked about specific models or specs, use the SPECIFIC INVENTORY DATA.
+            2. **Accuracy**: Do not mention technical terms like "RAG," "Vector DB," or "retrieved data." 
+            3. **Presentation**: Use bold text for model names. Use structured tables for comparing 3 or more devices.
+            4. **List Requirement**: When a user asks about a specific brand's mobiles, ALWAYS present the list of models in a clean bullet-point format.
+            5. **Pricing**: Always mention prices in PKR.
+            6. **Integrity**: If a user asks for something we don't carry, check the GLOBAL KNOWLEDGE brands and suggest the best alternative from those brands using the SEARCH DATA.
+            7. **Tone**: Helpful, elite, and precise. Like a premium concierge.
+            """
+            
+            messages_payload = [{'role': 'system', 'content': system_prompt}] + st.session_state["messages"]
+            response = client.chat.completions.create(
+                model=MODEL_NAME,
+                messages=messages_payload,
+                stream=True,
+            )
+
+            for chunk in response:
+                content = chunk.choices[0].delta.content
+                if content:
+                    # Character-by-character for a "softer" and more readable flow
+                    for char in content:
+                        full_response += char
+                        display_html = f'<div class="bot-container">{bot_icon}<div class="bot-content">{full_response}<span class="cursor"></span></div></div>'
                         response_placeholder.markdown(display_html, unsafe_allow_html=True)
-                        
-            # Final output without blinker
+                        time.sleep(0.01) # Tiny delay for softness
+            
+            # Final output without cursor
             display_html = f'<div class="bot-container">{bot_icon}<div class="bot-content">{full_response}</div></div>'
             response_placeholder.markdown(display_html, unsafe_allow_html=True)
             st.session_state["messages"].append({"role": "assistant", "content": full_response})
 
         except Exception as e:
-            # Show error with bot style
-            error_html = f'<div class="bot-container">{bot_icon}<div class="bot-content"><div style="background-color: #fdeded; color: #c63a3a; padding: 12px 18px; border-radius: 6px; font-size: 0.95rem;">I encountered a brief connection issue. Please try again.</div></div></div>'
+            error_html = f'<div class="bot-container">{bot_icon}<div class="bot-content"><div style="background-color: #fff5f5; color: #d32f2f; padding: 12px 18px; border-radius: 12px; font-size: 0.95rem; border: 1px solid #ffcdd2;">I encountered a connection issue. Please try again.</div></div></div>'
             response_placeholder.markdown(error_html, unsafe_allow_html=True)
